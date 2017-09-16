@@ -28,10 +28,13 @@
          <!-- Raw Notifications --> 
          <li class="notifications dropdown">
             <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> 
-               <i class="fa fa-bell"></i> 
+               <i class="fa fa-bell-o"></i> 
+               {{-- TODO: If got notifications enable this --}}
                <span class="badge badge-danger">3</span></a> 
-            <ul class="dropdown-menu">
 
+
+            {{-- TODO : dynamic notifications section --}}
+            <ul class="dropdown-menu">
                <li class="top">
                   <p class="small"> 
                      <a href="index.html#" class="pull-right">Mark all Read</a>
@@ -79,7 +82,15 @@
 
          <!-- Task Notifications --> 
          <li class="notifications dropdown">
-            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> <i class="fa fa-bell-o"></i> <span class="badge badge-success">6</span> </a> 
+
+            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> 
+               <i class="fa fa-file-text-o"></i> 
+               {{-- TODO: if got tasks, enable this for notifications --}}
+               <span class="badge badge-success">6</span> 
+
+            </a> 
+
+            {{-- TODO: dynamic tasks section --}}
             <ul class="dropdown-menu">
                <li class="top">
                   <p>You have 6 pending tasks</p>
@@ -96,6 +107,9 @@
                </li>
                <li class="external"> <a href="index.html#">See all tasks</a> </li>
             </ul>
+
+
+
          </li>
       </ul>
    </div>

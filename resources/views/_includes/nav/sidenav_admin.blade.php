@@ -19,6 +19,7 @@
                     </a>
                 </div>
             </header>
+
             <ul id="main-menu" class="main-menu">
                 <li class="opened active has-sub">
                     <a href="#"><i class="fa fa-home" style="margin-left: 5px; margin-right: 7px;"></i><span class="title">Dashboard</span></a> 
@@ -28,6 +29,7 @@
                      {{-- <li class="active"> --}}
                     </ul>
                 </li>
+
 
 
             </ul>
