@@ -13,19 +13,11 @@
                <!-- Reverse Caret --> 
                <li class="caret"></li>
                <!-- Profile sub-links --> 
-               <li> <a href="extra/timeline/index.html"> <i class="entypo-user"></i>
+               <li> <a href="extra/timeline/index.html"> <i class="fa fa-user"></i>
                   Edit Profile
                   </a> 
                </li>
-               <li> <a href="mailbox/main/index.html"> <i class="entypo-mail"></i>
-                  Inbox
-                  </a> 
-               </li>
-               <li> <a href="extra/calendar/index.html"> <i class="entypo-calendar"></i>
-                  Calendar
-                  </a> 
-               </li>
-               <li> <a href="index.html#"> <i class="entypo-clipboard"></i>
+               <li> <a href="index.html#"> <i class="fa fa-clipboard"></i>
                   Tasks
                   </a> 
                </li>
@@ -35,11 +27,14 @@
       <ul class="user-info pull-left pull-right-xs pull-none-xsm">
          <!-- Raw Notifications --> 
          <li class="notifications dropdown">
-            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> <i class="fa fa-bell"></i> <span class="badge badge-danger">6</span> </a> 
+            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> 
+               <i class="fa fa-bell"></i> 
+               <span class="badge badge-danger">3</span></a> 
             <ul class="dropdown-menu">
-               <!-- TS150546302412859: Xenon - Boostrap Admin Template created by Laborator / Please buy this theme and support the updates --> 
+
                <li class="top">
-                  <p class="small"> <a href="index.html#" class="pull-right">Mark all Read</a>
+                  <p class="small"> 
+                     <a href="index.html#" class="pull-right">Mark all Read</a>
                      You have <strong>3</strong> new notifications.
                   </p>
                </li>
@@ -84,7 +79,7 @@
 
          <!-- Task Notifications --> 
          <li class="notifications dropdown">
-            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> <i class="fa fa-bell-o"></i> <span class="badge badge-success">1</span> </a> 
+            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> <i class="fa fa-bell-o"></i> <span class="badge badge-success">6</span> </a> 
             <ul class="dropdown-menu">
                <li class="top">
                   <p>You have 6 pending tasks</p>
@@ -114,11 +109,15 @@
                <li class="active"> <a href="index.html#"> <img src="{{asset('images/flags/flag-uk.png')}}" width="16" height="16" /> <span>English</span> </a> </li>
             </ul>
          </li>       
-         <li class="sep"></li>
+         <li class="sep" style="border-left: 1px solid #bbbbbb"></li>
+
+         {{-- Logout Button --}}
          <li> <a href="extra/login/index.html">
-            Log Out &nbsp;<i class="fa fa-sign-out"></i> </a> 
+            Log Out &nbsp;<i class="fa fa-sign-out"></i> </a>&nbsp; 
          </li>
+
+
       </ul>
    </div>
 </div>
-<hr>
+<hr style="border-top: 1px solid #e2e2e2; margin-top: 10px;">
