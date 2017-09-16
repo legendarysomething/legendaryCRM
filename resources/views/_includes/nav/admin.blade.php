@@ -6,11 +6,12 @@
 {{-- Sidebar Navigation --}}
 @include('_includes.nav.sidenav_admin')
 
-<div class="main-content">
-	{{-- Top bar --}}
-	@include('_includes.nav.topbar_admin')
-	{{-- Content Goes Here --}}
-    @yield('content')
-</div>
+<body class="page-body page-fade gray" data-url="#">
+	<div class="main-content">
+		{{-- Top bar --}}
+		@include('_includes.nav.topbar_admin')
+		{{-- Content Goes Here --}}
+	    @yield('content')
+	</div>
 
 @include('_includes.footer')

@@ -25,4 +25,3 @@
 
 </head>
 
-<body class="page-body page-fade gray" data-url="#">

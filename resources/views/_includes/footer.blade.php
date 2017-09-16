@@ -1,6 +1,5 @@
 </div>
 
-
     <link rel="stylesheet" href="{{ asset('js/jvectormap/jquery-jvectormap-1.2.2.css')}}" id="style-resource-1">
     <link rel="stylesheet" href="{{ asset('js/rickshaw/rickshaw.min.css')}}" id="style-resource-2">
     <script src="{{ asset('js/gsap/TweenMax.min.js')}}" id="script-resource-1"></script> 
@@ -19,8 +18,14 @@
     <script src="{{ asset('js/morris.min.js')}}" id="script-resource-14"></script> 
     <script src="{{ asset('js/toastr.js')}}" id="script-resource-15"></script> 
     <script src="{{ asset('js/fullcalendar/fullcalendar.min.js')}}" id="script-resource-16"></script> 
-    <script src="{{ asset('js/neon-chat.js')}}" id="script-resource-17"></script> <!-- JavaScripts initializations and stuff --> 
+    {{-- Login Form JS --}}
+    <script src="{{asset('js/jquery.validate.min.js')}}" id="script-resource-8"></script>
+    <script src="{{asset('js/neon-login.js')}}" id="script-resource-9"></script>
+
+    <!-- JavaScripts initializations and stuff --> 
+    <script src="{{ asset('js/neon-chat.js')}}" id="script-resource-17"></script> 
     <script src="{{ asset('js/neon-custom.js')}}" id="script-resource-18"></script> 
+
 
 
 </body>
