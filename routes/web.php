@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 Route::get('/manage', function () {
-    return view('manageHome');
+    return view('pages.manageHome');
 });
 
 // Route::get('/manage','ManageController@index');

@@ -1,4 +1,4 @@
-@extends('_includes.nav.manage')
+@extends('_includes.nav.admin')
 
 
 
