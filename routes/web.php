@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.home');
 });
 
 
@@ -20,17 +20,10 @@ Route::get('/home', function () {
     return view('pages.home');
 });
 
-Route::get('/logtest', function () {
-    return view('pages.login');
-});
-
-Route::get('/fpwtest', function () {
-    return view('auth.passwords.reset');
-});
+// Route::get('/home', 'HomeController@index')->name('home');
 
 
 // Route::get('/manage','ManageController@index');
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');

@@ -125,10 +125,16 @@
          </li>       
          <li class="sep" style="border-left: 1px solid #bbbbbb"></li>
 
-         {{-- Logout Button --}}
-         <li> <a href="extra/login/index.html">
-            Log Out &nbsp;<i class="fa fa-sign-out"></i> </a>&nbsp; 
+         {{-- Logout Button and Functionality --}}
+         <li> 
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Log Out &nbsp;<i class="fa fa-sign-out"></i> 
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+                </form>
+            </a>
          </li>
+
 
 
       </ul>
