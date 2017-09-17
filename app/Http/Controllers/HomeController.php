@@ -21,7 +21,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    
     public function index()
+    {
+        return redirect()->route('home');
+    }
+
+    public function home()
     {
         return view('pages.home');
     }

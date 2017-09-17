@@ -24,12 +24,21 @@
                 <li class="opened active has-sub">
                     <a href="#"><i class="fa fa-home" style="margin-left: 5px; margin-right: 7px;"></i><span class="title">Dashboard</span></a> 
                     <ul class="visible">
-                        <li> <a href="#"><span class="title">Home</span></a> </li>
+                        <li> <a href="{{route('home')}}"><span class="title">Home</span></a> </li>
                         <li> <a href="#"><span class="title">User Management</span></a> </li>
                      {{-- <li class="active"> --}}
                     </ul>
                 </li>
-
+                <li> 
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                       <i class="fa fa-sign-out"></i>
+                       <span class="title">Log Out</span> 
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                        </form>
+                    </a>
+                </li>
+                
 
 
             </ul>

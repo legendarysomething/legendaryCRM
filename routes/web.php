@@ -11,19 +11,11 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('pages.home');
-// });
-
-
-// Route::get('/home', function () {
-//     return view('pages.home');
-// })->name('home');
 
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@home')->name('home');
 
 
 // Route::get('/manage','ManageController@index');
