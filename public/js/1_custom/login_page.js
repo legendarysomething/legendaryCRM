@@ -1,3 +1,5 @@
+
+
 $(document).ready(function()
 {
 
@@ -29,9 +31,11 @@ $(document).ready(function()
             }, 200);
 
             neonLogin.resetProgressBar(true);
-                                                    
                 
         }, 650);
+
+
+
 
     });
 });

@@ -34,33 +34,35 @@
 
 
                <form class="form-horizontal" id="login-form-submit" method="POST" action="{{ route('login') }}">
-                  {{ csrf_field() }}
+                    {{ csrf_field() }}
 
-                  <div class="form-group">
-                     <div class="input-group {{ $errors->has('email') ? 'validate-has-error' : '' }}">
-                        <div class="input-group-addon"> <i class="fa fa-user-o"></i> </div>
-                        <input type="text" class="form-control custom-click-sam" name="email" id="email" placeholder="E-Mail" autocomplete="off" /> 
-                     </div>
-                  </div>
+                    <div class="form-login-error {{ ($errors->has('email') || $errors->has('password')) ? 'visible' : '' }}">
+                        <h3>Invalid Login Credentials</h3>
+                    </div>
 
-                  <div class="form-group">
-                     <div class="input-group {{ $errors->has('password') ? 'validate-has-error' : '' }}">
-                        <div class="input-group-addon"> <i class="fa fa-key"></i> </div>
-                        <input type="password" class="form-control custom-click-sam" name="password" id="password" placeholder="Password" autocomplete="off" /> 
-                     </div>
-                  </div>
+                    <div class="form-group">
+                        <div class="input-group {{ $errors->has('email') ? 'validate-has-error' : '' }}">
+                            <div class="input-group-addon"> <i class="fa fa-user-o"></i> </div>
+                            <input type="text" class="form-control custom-click-sam" name="email" id="email" placeholder="E-Mail" autocomplete="off" /> 
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group {{ $errors->has('password') ? 'validate-has-error' : '' }}">
+                            <div class="input-group-addon"> <i class="fa fa-key"></i> </div>
+                            <input type="password" class="form-control custom-click-sam" name="password" id="password" placeholder="Password" autocomplete="off" /> 
+                        </div>
+                    </div>
                   
-                 <div class="form-login-error">
-                    <h3>Invalid login</h3>
-                 </div>
 
-                  <div class="form-group"> 
-                     <div class="btn btn-primary btn-block btn-login">
-                         {{-- <div onclick="event.preventDefault(); document.getElementById('login-form-submit').submit();"> --}}
-                         <div id="custom-login-sam">
-                            Log In<i class="fa fa-sign-in"></i> 
-                        </div> 
-                  </div>
+                    <div class="form-group"> 
+                        <div class="btn btn-primary btn-block btn-login">
+                             {{-- <div onclick="event.preventDefault(); document.getElementById('login-form-submit').submit();"> --}}
+                             <div id="custom-login-sam">
+                                Log In<i class="fa fa-sign-in"></i> 
+                            </div> 
+                        </div>
+                    </div>
                   {{-- <div class="form-group"> <em>- or -</em> </div> --}}
 
                  {{--  <div class="form-group"> <button type="button" class="btn btn-default btn-lg btn-block btn-icon icon-left facebook-button">
