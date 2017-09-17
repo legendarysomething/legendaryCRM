@@ -2,40 +2,49 @@
 
 $(document).ready(function()
 {
-
+    
+        
     $(".login-page").removeClass('logging-in');
 
-
+    // Enter as Click button
     $('.custom-click-sam').keypress(function(e){
       if(e.keyCode==13)
       $('#custom-login-sam').click();
     });
 
-
+    // Submit Login form here
     $("#custom-login-sam").click(function(){
 
-        $(".login-page").addClass('logging-in'); // This will hide the login form and init the progress bar
-            
-            
-        // Hide Errors
-        $(".form-login-error").slideUp('fast');
+        var email = $("input#email").val().trim();
+        var password = $("input#password").val().trim();
 
-        // We will wait till the transition ends                
-        setTimeout(function()
+        // Form Input Validation
+        if (email == '' || password == '')
         {
-            
-            // The form data are subbmitted, we can forward the progress to 70%
-            neonLogin.setPercentage(100);
-            setTimeout(function() {
-                document.getElementById('login-form-submit').submit();
-            }, 200);
+            $(".input-group").addClass('validate-has-error');
+        }
+        else
+        {
+            // This will hide the login form and init the progress bar
+            $(".login-page").addClass('logging-in'); 
+            // Hide Errors
+            $(".form-login-error").slideUp('fast');
 
-            neonLogin.resetProgressBar(true);
+            // We will wait till the transition ends                
+            setTimeout(function()
+            {
                 
-        }, 650);
+                // The form data are subbmitted, we can forward the progress to 70%
+                neonLogin.setPercentage(100);
+                setTimeout(function() {
+                    document.getElementById('login-form-submit').submit();
+                }, 200);
 
-
-
+                neonLogin.resetProgressBar(true);
+                    
+            }, 650);
+        }
 
     });
+    
 });

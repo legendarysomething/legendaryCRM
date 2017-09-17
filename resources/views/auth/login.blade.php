@@ -50,7 +50,7 @@
                     <div class="form-group">
                         <div class="input-group {{ $errors->has('password') ? 'validate-has-error' : '' }}">
                             <div class="input-group-addon"> <i class="fa fa-key"></i> </div>
-                            <input type="password" class="form-control custom-click-sam" name="password" id="password" placeholder="Password" autocomplete="off" /> 
+                            <input type="password" class="form-control custom-click-sam" name="password" id="password" placeholder="Password" autocomplete="off" />
                         </div>
                     </div>
                   
