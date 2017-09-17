@@ -6,7 +6,7 @@
 @section('content')
 
 
-This is the homepage
+This is the Manage Users page
 
 
 @endsection

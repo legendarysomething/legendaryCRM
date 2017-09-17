@@ -1,3 +1,5 @@
+{{-- TODO: set active sidebar panel somehow based on page --}}
+
 <div class="page-container">
     <div class="sidebar-menu">
         <div class="sidebar-menu-inner">
@@ -22,12 +24,12 @@
 
             <ul id="main-menu" class="main-menu">
                 <li class="opened active has-sub">
-                    <a href="#"><i class="fa fa-home"></i>
+                    <a href="#"><i class="fa fa-tachometer"></i>
                         <span class="title">Dashboard</span>
                     </a> 
                     <ul class="visible">
                         <li> <a href="{{route('home')}}"><span class="title">Home</span></a> </li>
-                        <li> <a href="#"><span class="title">User Management</span></a> </li>
+                        <li> <a href="{{route('admin.manageusers')}}"><span class="title">User Management</span></a> </li>
                      {{-- <li class="active"> --}}
                     </ul>
                 </li>

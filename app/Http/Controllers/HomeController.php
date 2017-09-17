@@ -32,9 +32,8 @@ class HomeController extends Controller
 
     public function home()
     {   
-        $name = "Sam Test";
 
-        return view('pages.home',compact('name'));
+        return view('pages.home');
 
 
     }

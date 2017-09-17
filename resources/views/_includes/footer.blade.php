@@ -1,11 +1,15 @@
 </div>
+    
+    {{-- Greensock CDN if wanted later on --}}
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script> --}}
+
 
     <link rel="stylesheet" href="{{ asset('js/jvectormap/jquery-jvectormap-1.2.2.css')}}" id="style-resource-1">
     <link rel="stylesheet" href="{{ asset('js/rickshaw/rickshaw.min.css')}}" id="style-resource-2">
-    
+
     {{-- Custom Javascript --}}
     <script src="{{ asset('js/1_custom/login_page.js')}}" id="script-resource-1"></script> 
-    
+
     {{-- Theme Javascript --}}
     <script src="{{ asset('js/gsap/TweenMax.min.js')}}" id="script-resource-1"></script> 
     <script src="{{ asset('js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js')}}" id="script-resource-2"></script> 
