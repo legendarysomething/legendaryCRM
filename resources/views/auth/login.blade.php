@@ -1,69 +1,71 @@
-@extends('layouts.app')
+@include('_includes.header')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<body class="page-body login-page login-form-fall" data-url="http://demo.neontheme.com">
+      <!-- TS15054631954222: Xenon - Boostrap Admin Template created by Laborator / Please buy this theme and support the updates --> <script type="text/javascript">
+         var baseurl = 'http://demo.neontheme.com/';
+      </script> 
+      <div class="login-container">
+         <div class="login-header login-caret">
+            <div class="login-content">
+               <a href="#" class="logo"> <img src="{{ asset('images/logos/logo.png')}}" width="300" alt="" /> </a> 
+               <p class="description">Welcome! Kindly log in to access your profile!</p>
+               <!-- progress bar indicator --> 
+               <div class="login-progressbar-indicator">
+                  <h3>43%</h3>
+                  <span>logging in...</span> 
+               </div>
             </div>
-        </div>
-    </div>
-</div>
-@endsection
+         </div>
+
+         <div class="login-progressbar">
+            <div></div>
+         </div>
+
+         <div class="login-form">
+            <div class="login-content">
+               <div class="form-login-error">
+                  <h3>Invalid login</h3>
+               </div>
+               <form method="post" role="form" id="form_login">
+                  <div class="form-group">
+                     <div class="input-group">
+                        <div class="input-group-addon"> <i class="fa fa-user-o"></i> </div>
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Username" autocomplete="off" /> 
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <div class="input-group">
+                        <div class="input-group-addon"> <i class="fa fa-key"></i> </div>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" autocomplete="off" /> 
+                     </div>
+                  </div>
+                  <div class="form-group"> <button type="submit" class="btn btn-primary btn-block btn-login"> <i class="fa fa-sign-in"></i>
+                     Login In
+                     </button> 
+                  </div>
+                  {{-- <div class="form-group"> <em>- or -</em> </div> --}}
+
+                 {{--  <div class="form-group"> <button type="button" class="btn btn-default btn-lg btn-block btn-icon icon-left facebook-button">
+                     Login with Facebook
+                     <i class="entypo-facebook"></i> </button> 
+                  </div> --}}
+
+               </form>
+               <div class="login-bottom-links"> 
+	               <a href="{{ route('password.request') }}" class="link">Forgot your password?</a> 
+	               <br /> 
+	               {{-- TODO: Link --}}
+	               <a href="#">Contact Us!</a> 
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+
+
+
+
+
+@include('_includes.footer')

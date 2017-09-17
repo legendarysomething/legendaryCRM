@@ -25,11 +25,12 @@ Route::get('/logtest', function () {
 });
 
 Route::get('/fpwtest', function () {
-    return view('pages.forgot_pass');
+    return view('auth.passwords.reset');
 });
 
 
 // Route::get('/manage','ManageController@index');
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
