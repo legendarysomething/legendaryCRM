@@ -22,7 +22,9 @@
 
             <ul id="main-menu" class="main-menu">
                 <li class="opened active has-sub">
-                    <a href="#"><i class="fa fa-home" style="margin-left: 5px; margin-right: 7px;"></i><span class="title">Dashboard</span></a> 
+                    <a href="#"><i class="fa fa-home"></i>
+                        <span class="title">Dashboard</span>
+                    </a> 
                     <ul class="visible">
                         <li> <a href="{{route('home')}}"><span class="title">Home</span></a> </li>
                         <li> <a href="#"><span class="title">User Management</span></a> </li>
