@@ -41,14 +41,14 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="input-group {{ $errors->has('email') ? 'validate-has-error' : '' }}">
+                        <div class="input-group {{ $errors->has('email') ? 'validate-has-error' : 'focused' }}">
                             <div class="input-group-addon"> <i class="fa fa-user-o"></i> </div>
                             <input type="text" class="form-control custom-click-sam" name="email" id="email" placeholder="E-Mail" autocomplete="off" /> 
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <div class="input-group {{ $errors->has('password') ? 'validate-has-error' : '' }}">
+                        <div class="input-group {{ $errors->has('password') ? 'validate-has-error' : 'focused' }}">
                             <div class="input-group-addon"> <i class="fa fa-key"></i> </div>
                             <input type="password" class="form-control custom-click-sam" name="password" id="password" placeholder="Password" autocomplete="off" />
                         </div>
@@ -56,9 +56,9 @@
                   
 
                     <div class="form-group"> 
-                        <div class="btn btn-primary btn-block btn-login">
-                             {{-- <div onclick="event.preventDefault(); document.getElementById('login-form-submit').submit();"> --}}
-                             <div id="custom-login-sam">
+                        <div id="custom-login-sam">
+                            <div class="btn btn-primary btn-block btn-login">
+                                {{-- <div onclick="event.preventDefault(); document.getElementById('login-form-submit').submit();"> --}}
                                 Log In<i class="fa fa-sign-in"></i> 
                             </div> 
                         </div>

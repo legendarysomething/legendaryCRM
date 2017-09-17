@@ -3,7 +3,6 @@
 $(document).ready(function()
 {
     
-        
     $(".login-page").removeClass('logging-in');
 
     // Enter as Click button
