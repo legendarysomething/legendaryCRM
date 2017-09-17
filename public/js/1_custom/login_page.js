@@ -13,7 +13,8 @@ $(document).ready(function()
 
     // Submit Login form here
     $("#custom-login-sam").click(function(){
-
+        
+        neonLogin.resetProgressBar(true);
         var email = $("input#email").val().trim();
         var password = $("input#password").val().trim();
 
@@ -39,7 +40,7 @@ $(document).ready(function()
                     document.getElementById('login-form-submit').submit();
                 }, 200);
 
-                neonLogin.resetProgressBar(true);
+                
                     
             }, 650);
         }
