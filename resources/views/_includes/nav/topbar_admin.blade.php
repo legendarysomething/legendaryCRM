@@ -7,7 +7,7 @@
          <li class="profile-info dropdown">
             <!-- add class "pull-right" if you want to place this from right --> 
             <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown"> <img src="{{asset('images/profile_pictures/sam.jpg')}}" alt="" class="img-circle" width="44" />
-            Sam Khoo
+            {{ ucfirst(Auth::user()->username) }}
             </a> 
             <ul class="dropdown-menu">
                <!-- Reverse Caret --> 
@@ -120,7 +120,16 @@
             Language: &nbsp;
             <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown" data-close-others="true"> <img src="{{asset('images/flags/flag-uk.png')}}" width="16" height="16" /> </a> 
             <ul class="dropdown-menu pull-right">
-               <li class="active"> <a href="index.html#"> <img src="{{asset('images/flags/flag-uk.png')}}" width="16" height="16" /> <span>English</span> </a> </li>
+               <li class="active"> <a href="#"> 
+                  <img src="{{asset('images/flags/flag-uk.png')}}" width="16" height="16" /> 
+                  <span>English</span> </a> 
+               </li>
+
+               {{-- TODO: language to chinese enable --}}
+               {{-- <li class="active"> <a href="#"> 
+                  <img src="{{asset('images/flags/flag-cn.png')}}" width="16" height="16" /> 
+                  <span>Chinese</span> </a> 
+               </li> --}}
             </ul>
          </li>       
          <li class="sep" style="border-left: 1px solid #bbbbbb"></li>

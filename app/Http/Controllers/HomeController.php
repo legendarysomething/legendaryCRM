@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
+
 class HomeController extends Controller
 {
     /**
@@ -29,10 +31,11 @@ class HomeController extends Controller
     }
 
     public function home()
-    {
+    {   
+        $name = "Sam Test";
 
-        return view('pages.home');
+        return view('pages.home',compact('name'));
 
-        
+
     }
 }
