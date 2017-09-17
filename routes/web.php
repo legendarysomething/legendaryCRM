@@ -24,6 +24,11 @@ Route::get('/logtest', function () {
     return view('pages.login');
 });
 
+Route::get('/fpwtest', function () {
+    return view('pages.forgot_pass');
+});
+
+
 // Route::get('/manage','ManageController@index');
 Auth::routes();
 
