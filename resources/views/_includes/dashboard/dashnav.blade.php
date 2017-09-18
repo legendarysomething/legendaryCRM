@@ -37,7 +37,7 @@
 </head>
 
 <body>
-    <section id="main-wrapper" class="theme-default">
+    <section id="main-wrapper" class="theme-dark-full">
         <header id="header">
             <!--logo start-->
             <div class="brand">

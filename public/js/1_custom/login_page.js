@@ -35,7 +35,7 @@ $(document).ready(function()
             {
                 
                 // The form data are subbmitted, we can forward the progress to 70%
-                neonLogin.setPercentage(100);
+                neonLogin.setPercentage(99);
                 setTimeout(function() {
                     document.getElementById('login-form-submit').submit();
                 }, 200);
