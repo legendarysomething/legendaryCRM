@@ -1,11 +1,11 @@
 {{-- TODO: set active sidebar panel somehow based on page --}}
 
 <div class="page-container">
-    <div class="sidebar-menu">
+    <div class="sidebar-menu fixed">
         <div class="sidebar-menu-inner">
             <header class="logo-env">
                 <!-- logo --> 
-                <div class="logo"> <a href="#"> <img src="{{asset('images/logos/logo.png')}}" width="120" alt=""/> </a> </div>
+                <div class="logo"> <a href="#"> <img src="{{asset('images/logos/logo.png')}}" width="150" alt=""/> </a> </div>
                 <!-- logo collapse icon --> 
                 <div class="sidebar-collapse">
                     <a href="index.html#" class="sidebar-collapse-icon with-animation">
