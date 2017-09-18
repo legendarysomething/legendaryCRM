@@ -14,7 +14,7 @@ Manage Users
 
 <div class="pageheader">
     <h1>Manage Users</h1>
-    <p class="description">Welcome to Your Custom Dashboard {{Auth::user()->username}}</p>
+    <p class="description">Welcome {{ ucfirst(Auth::user()->username) }}</p>
     <div class="breadcrumb-wrapper hidden-xs">
         <span class="label">You are here:</span>
         <ol class="breadcrumb">
@@ -27,7 +27,7 @@ Manage Users
         <div class="col-md-12 col-lg-12">
 			<div class="panel panel-default">
     			<div class="panel-body ng-binding">
-    				You can quickly bootstrap your Web App project here.
+    				Welcome to the Users Management Page.
    				 </div>
 			</div>
 		</div>

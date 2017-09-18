@@ -28,6 +28,10 @@
     <!-- Feature detection -->
     <script src="{{asset('js/vendor/modernizr-2.6.2.min.js')}}"></script>
 
+    {{-- TODO: pace progress bar still not working for some reason --}}
+    {{-- <script src="{{asset('plugins/pace/pace.min.js"')}}"></script> --}}
+    <script type="https://cdnjs.cloudflare.com/ajax/libs/pace/0.5.3/pace.js"></script>
+
     
 </head>
 
@@ -83,7 +87,7 @@
                     <i class="on border-dark animated bounceIn"></i>
                 </div>
                 <div class="profile-body dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><h4>{{Auth::user()->username}}&nbsp;<span class="caret"></span></h4></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><h4>{{ ucfirst(Auth::user()->username) }}&nbsp;<span class="caret"></span></h4></a>
                     <small class="title">Software Developer</small>
                     <ul class="dropdown-menu animated fadeInRight" role="menu">
                         <li class="profile-progress">
@@ -190,7 +194,6 @@
     <script src="{{asset('js/vendor/jquery-1.11.1.min.js')}}"></script>
     <script src="{{asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('plugins/navgoco/jquery.navgoco.min.js')}}"></script>
-    <script src="{{asset('plugins/pace/pace.min.js"')}}"></script>
     <script src="{{asset('js/src/app.js')}}"></script>
 
 </body>
