@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Munchie Dashboard</title>
+    <title>@yield('pageheader')</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!-- Bootstrap core CSS -->
@@ -51,19 +51,29 @@
                         <i class="icon-user"></i>
                     </button>
                 </li>
-                <li class="hidden-xs">
+
+             {{--    <li class="hidden-xs">
                     <input type="text" class="search" placeholder="Search project...">
                     <button type="submit" class="btn btn-sm btn-search"><i class="fa fa-search"></i>
                     </button>
-                </li>
+                </li> --}}
+
             </ul>
+
+
             <ul class="nav navbar-nav navbar-right">
                 <li class="toggle-navigation toggle-right">
-                    <button class="sidebar-toggle" id="toggle-right">
-                        <i class="fa fa-indent"></i>
+                    <button class="sidebar-toggle" id="toggle-right" onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                        <i class="fa fa-sign-out"></i>
                     </button>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 </li>
             </ul>
+
+
         </header>
         <!--sidebar left start-->
         <aside class="sidebar sidebar-left">
@@ -73,8 +83,8 @@
                     <i class="on border-dark animated bounceIn"></i>
                 </div>
                 <div class="profile-body dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><h4>Example User<span class="caret"></span></h4></a>
-                    <small class="title">Front-end Developer</small>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><h4>{{Auth::user()->username}}&nbsp;<span class="caret"></span></h4></a>
+                    <small class="title">Software Developer</small>
                     <ul class="dropdown-menu animated fadeInRight" role="menu">
                         <li class="profile-progress">
                             <h5>
@@ -102,24 +112,41 @@
                                 <span class="icon"><i class="fa fa-cog"></i>
                                 </span>Settings</a>
                         </li>
-                        <li class="divider"></li>
+                        {{-- <li class="divider"></li>
                         <li>
-                            <a href="javascript:void(0);">
-                                <span class="icon"><i class="fa fa-sign-out"></i>
-                                </span>Logout</a>
-                        </li>
+                           
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                <span class="icon"><i class="fa fa-sign-out"></i></span>Logout
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+
+                        </li> --}}
                     </ul>
                 </div>
             </div>
             <nav>
                 <h5 class="sidebar-header">Navigation</h5>
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active">
-                        <a href="#" title="Dashboard">
+                    <li class=" {{ Request::is('home') ? 'active' : '' }}">
+                        <a href="{{route('home')}}" title="Dashboard">
                             <i class="fa  fa-fw fa-tachometer"></i> Dashboard
                         </a>
                     </li>
-                    <li class="nav-dropdown">
+
+                    <li class="{{ Request::is('admin/manageusers') ? 'active' : '' }}">
+                        <a href="{{route('admin.manageusers')}}" title="Dashboard">
+                            <i class="fa  fa-fw fa-user"></i> Manage Users
+                        </a>
+                    </li>
+
+
+
+                    {{-- <li class="nav-dropdown">
                         <a href="#" title="UI Elements">
                             <i class="fa fa-fw fa-file-text"></i> Pages
                         </a>
@@ -135,7 +162,9 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
+
+
                 </ul>
             </nav>
         </aside>

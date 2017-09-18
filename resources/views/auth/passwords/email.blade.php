@@ -1,4 +1,4 @@
-@include('_includes.header')
+@include('_includes.login.header')
 
 
 
@@ -11,7 +11,7 @@
       <div class="login-container">
          <div class="login-header login-caret">
             <div class="login-content">
-               <a href="../../dashboard/main/index.html" class="logo"> <img src="{{asset('images/logos/logo.png')}}" width="300" alt="" /> </a> 
+               <a href="../../dashboard/main/index.html" class="logo"> <img src="{{asset('img/logo.png')}}" width="300" alt="" /> </a> 
                <p class="description">Enter your email, and we will send the reset link.</p>
                <!-- progress bar indicator --> 
                <div class="login-progressbar-indicator">
@@ -60,4 +60,4 @@
 
 
 
-@include('_includes.footer')
+@include('_includes.login.footer')

@@ -1,7 +1,7 @@
 </div>
     
 
-
+    <script src="{{asset('js/gsap/TweenMax.min.js')}}" id="script-resource-1"></script>
 
     {{-- Custom Javascript --}}
     <script src="{{ asset('js/1_custom/login_page.js')}}" id="script-resource-1"></script> 
@@ -14,13 +14,6 @@
     <script src="{{ asset('js/resizeable.js')}}" id="script-resource-5"></script> 
     <script src="{{ asset('js/neon-api.js')}}" id="script-resource-6"></script> 
     <script src="{{ asset('js/cookies.min.js')}}" id="script-resource-7"></script> 
-    {{-- Vector Map --}}
-    <link rel="stylesheet" href="{{ asset('js/jvectormap/jquery-jvectormap-1.2.2.css')}}" id="style-resource-1">
-    <script src="{{ asset('js/jvectormap/jquery-jvectormap-1.2.2.min.js')}}" id="script-resource-8"></script> 
-    <script src="{{ asset('js/jvectormap/jquery-jvectormap-europe-merc-en.js')}}" id="script-resource-9"></script> 
-    
-
-    <script src="{{ asset('js/jquery.sparkline.min.js')}}" id="script-resource-10"></script> 
 
 
 
@@ -29,9 +22,10 @@
     <script src="{{asset('js/neon-login.js')}}" id="script-resource-9"></script>
 
     <!-- JavaScripts initializations and stuff --> 
-    <script src="{{ asset('js/neon-chat.js')}}" id="script-resource-17"></script> 
     <script src="{{ asset('js/neon-custom.js')}}" id="script-resource-18"></script> 
+    <script src="{{ asset('js/neon-skins.js')}}" id="script-resource-12"></script>
 
+{{-- Todo del neon-demo? --}}
 
 
 </body>

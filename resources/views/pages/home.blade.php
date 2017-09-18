@@ -1,14 +1,16 @@
 
-@extends('_includes.dashboard.template')
+@extends('_includes.dashboard.dashnav')
 
-
+{{-- Page Header --}}
+@section('pageheader')
+Home
+@endsection
 
 @section('content')
 
-
 <div class="pageheader">
     <h1>Dashboard</h1>
-    <p class="description">Welcome to NEUBOARD Responsive Admin Theme</p>
+    <p class="description">Welcome to Your Custom Dashboard {{Auth::user()->username}}</p>
     <div class="breadcrumb-wrapper hidden-xs">
         <span class="label">You are here:</span>
         <ol class="breadcrumb">
