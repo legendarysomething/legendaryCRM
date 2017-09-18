@@ -5609,10 +5609,10 @@ body {
 }
 .page-container .sidebar-menu #main-menu li.has-sub > a:before {
   position: relative;
-  content: "\f054";
-  content: "\f054";
+  content: '\e877';
+  content: '\e879';
   display: inline-block;
-  font-family: "FontAwesome";
+  font-family: "Entypo";
   color: #454a54;
   color: #FFF;
   float: right;
@@ -6425,10 +6425,10 @@ float: left;
 }
 .page-container.horizontal-menu header.navbar .navbar-nav > li ul li.has-sub > a:before {
   position: relative;
-  content: "\f054";
-  content: "\f054";
+  content: '\e877';
+  content: '\e879';
   display: inline-block;
-  font-family: "FontAwesome";
+  font-family: "Entypo";
   color: #aaabae;
   color: #FFF;
   float: right;

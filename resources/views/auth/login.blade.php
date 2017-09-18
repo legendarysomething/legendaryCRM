@@ -1,4 +1,4 @@
-@include('_includes.header')
+@include('_includes.login.header')
 
 {{-- uses custom js --}}
 
@@ -12,7 +12,7 @@
       <div class="login-container">
          <div class="login-header login-caret">
             <div class="login-content">
-               <a href="#" class="logo"> <img src="{{ asset('images/logos/logo.png')}}" width="300" alt="" /> </a> 
+               <a href="#" class="logo"> <img src="{{ asset('img/logo.png')}}" width="300" alt="" /> </a> 
                <p class="description">Welcome! Kindly log in to access your profile!</p>
                <!-- progress bar indicator --> 
                <div class="login-progressbar-indicator">
@@ -84,4 +84,4 @@
 
 
 
-@include('_includes.footer')
+@include('_includes.login.footer')

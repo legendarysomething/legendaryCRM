@@ -13,15 +13,23 @@
 
 
 
+// Route::get('/',function(){
+// 	return view('pages.home');
+// });
+
+// Route::get('/home',function(){
+// 	return view('pages.home');
+// });
+
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@home')->name('home');
 
 
-Route::prefix('admin')->group(function(){
-	Route::get('/manageusers','ManageUsersController@index')->name('admin.manageusers');
+// Route::prefix('admin')->group(function(){
+// 	Route::get('/manageusers','ManageUsersController@index')->name('admin.manageusers');
 
-});
+// });
 
 
 
