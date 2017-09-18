@@ -8,7 +8,6 @@ Home
 {{-- End Page Header --}}
 
 
-
 {{--  Page Content --}}
 @section('content')
 
