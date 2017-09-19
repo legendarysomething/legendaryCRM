@@ -45,6 +45,7 @@
             <!--logo start-->
             <div class="brand">
                 <a href="#" class="logo">
+                    <i class="fa fa-language"></i>&nbsp;
                     <span>J-SQU</span>ARED</a>
             </div>
             <!--logo end-->

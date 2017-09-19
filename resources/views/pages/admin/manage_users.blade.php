@@ -27,14 +27,14 @@ Manage Users
     <div class="col-md-12">
         <div class="panel panel-default animated fadeInUp">
             <div class="panel-heading">
-                <h3 class="panel-title">Members</h3>
+                <h3 class="panel-title">Active Members</h3>
                 <div class="actions pull-right">
                     <i class="fa fa-expand"></i>
                     <i class="fa fa-chevron-down"></i>
                     <i class="fa fa-times"></i>
                 </div>
             </div>
-            <div class="panel-body">
+            <div class="panel-body table-responsive">
                 <table id="user-management" class="table table-striped">
                     <thead>
                         <tr>
@@ -59,9 +59,8 @@ Manage Users
 
                     </tbody>
                 </table>
-
-
             </div>
+
         </div>
     </div>
 </div>
