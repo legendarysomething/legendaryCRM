@@ -14,7 +14,6 @@ Home
 
 <div class="pageheader">
     <h1>Dashboard</h1>
-    <p class="description">Welcome {{ ucfirst(Auth::user()->username) }}</p>
     <div class="breadcrumb-wrapper hidden-xs">
         <span class="label">You are here:</span>
         <ol class="breadcrumb">
