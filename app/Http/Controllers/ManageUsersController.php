@@ -41,7 +41,7 @@ class ManageUsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
 
         return view('pages.admin.manage_single_user',compact('user'));
     }
