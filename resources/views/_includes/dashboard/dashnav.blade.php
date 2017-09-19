@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <!-- Feature detection -->
     <script src="{{asset('js/vendor/modernizr-2.6.2.min.js')}}"></script>
+    <!-- DataTables-->
+    <link rel="stylesheet" href="{{asset('plugins/dataTables/css/dataTables.css')}}">
+
 
     {{-- TODO: pace progress bar still not working for some reason --}}
     {{-- <script src="{{asset('plugins/pace/pace.min.js"')}}"></script> --}}
@@ -197,6 +200,8 @@
     <script src="{{asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('plugins/navgoco/jquery.navgoco.min.js')}}"></script>
     <script src="{{asset('js/src/app.js')}}"></script>
+
+    @yield('footer')
 
 </body>
 

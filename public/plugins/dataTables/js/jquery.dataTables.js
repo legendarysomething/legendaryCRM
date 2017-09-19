@@ -10857,7 +10857,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "Search: &nbsp;",
 	
 	
 			/**

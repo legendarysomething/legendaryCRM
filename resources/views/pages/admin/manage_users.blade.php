@@ -35,27 +35,32 @@ Manage Users
                 </div>
             </div>
             <div class="panel-body">
-                <table class="table table-striped">
+                <table id="user-management" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>ID</th>
                             <th>Username</th>
                             <th>Email</th>
                             <th>Manage</th>
                         </tr>
                     </thead>
                     <tbody>
+
                         @foreach ($users as $user)
                         <tr>
                             <td>{{$user->id}}</td>
                             <td>{{$user->username}}</td>
                             <td>{{$user->email}}</td>
-                            <td>Some Button</td>
+                            <td>
+                                <a href="manageusers/{{$user->id}}" class="btn btn-success" style="color: #fff;">Edit User</a>
+                            </td>
                         </tr>
                         @endforeach
 
                     </tbody>
                 </table>
+
+
             </div>
         </div>
     </div>
@@ -74,5 +79,21 @@ Manage Users
 </section>
 
 
+@endsection
+
+
+
+
+
+@section('footer')
+<!--Page Leve JS -->
+<script src="{{asset('plugins/dataTables/js/jquery.dataTables.js')}}"></script>
+<script src="{{asset('plugins/dataTables/js/dataTables.bootstrap.js')}}"></script>
+<script>
+$(document).ready(function() {
+    $('#user-management').dataTable();
+});
+
+</script>
 
 @endsection
