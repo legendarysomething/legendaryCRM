@@ -44,9 +44,10 @@
         <header id="header">
             <!--logo start-->
             <div class="brand">
-                <a href="#" class="logo">
+                <a href="{{route('home')}}" class="logo">
                     <i class="fa fa-language"></i>&nbsp;
-                    <span>J-SQU</span>ARED</a>
+                    <span>J-SQU</span>ARED
+                </a>
             </div>
             <!--logo end-->
             <ul class="nav navbar-nav navbar-left">
