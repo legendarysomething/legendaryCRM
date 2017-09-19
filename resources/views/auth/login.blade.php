@@ -43,14 +43,14 @@
                     <div class="form-group">
                         <div class="input-group {{ $errors->has('email') ? 'validate-has-error' : 'focused' }}">
                             <div class="input-group-addon"> <i class="fa fa-user-o"></i> </div>
-                            <input type="text" class="form-control custom-click-sam" name="email" id="email" placeholder="E-Mail" autocomplete="off" value="samkhoo77@hotmail.com"/> 
+                            <input type="text" class="form-control custom-click-sam" name="email" id="email" placeholder="E-Mail" autocomplete="off" value="superadministrator@app.com"/> 
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="input-group {{ $errors->has('password') ? 'validate-has-error' : 'focused' }}">
                             <div class="input-group-addon"> <i class="fa fa-key"></i> </div>
-                            <input type="password" class="form-control custom-click-sam" name="password" id="password" placeholder="Password" autocomplete="off" value="asdfasdf"/>
+                            <input type="password" class="form-control custom-click-sam" name="password" id="password" placeholder="Password" autocomplete="off" value="password"/>
                         </div>
                     </div>
                     

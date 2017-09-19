@@ -142,13 +142,14 @@
                             <i class="fa  fa-fw fa-tachometer"></i> Dashboard
                         </a>
                     </li>
-
+                    
+                    @role('superadministrator|administrator')
                     <li class="{{ Request::is('admin/manageusers') ? 'active' : '' }}">
                         <a href="{{route('admin.manageusers')}}" title="Dashboard">
                             <i class="fa  fa-fw fa-user"></i> Manage Users
                         </a>
                     </li>
-
+                    @endrole
 
 
                     {{-- <li class="nav-dropdown">
