@@ -53,7 +53,12 @@
                             <input type="password" class="form-control custom-click-sam" name="password" id="password" placeholder="Password" autocomplete="off" value="asdfasdf"/>
                         </div>
                     </div>
-                  
+                    
+                   {{--  <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                        </label>
+                    </div> --}}
 
                     <div class="form-group"> 
                         <div id="custom-login-sam">

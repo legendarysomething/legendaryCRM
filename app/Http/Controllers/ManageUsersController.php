@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+
 
 class ManageUsersController extends Controller
 {
@@ -22,7 +24,26 @@ class ManageUsersController extends Controller
      */
     public function index()
     {
-        return view('pages.admin.manage_user');
+
+
+        $users = User::all();
+
+        return view('pages.admin.manage_users',compact('users')); 
+
+    }
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $user = User::find($id);
+
+        return view('pages.admin.manage_single_user',compact('user'));
     }
 
     /**
@@ -46,16 +67,7 @@ class ManageUsersController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+    
 
     /**
      * Show the form for editing the specified resource.

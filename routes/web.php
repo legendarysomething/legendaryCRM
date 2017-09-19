@@ -16,11 +16,12 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/home', 'HomeController@home')->name('home');
+Route::get('home', 'HomeController@home')->name('home');
 
 
 Route::prefix('admin')->group(function(){
-	Route::get('/manageusers','ManageUsersController@index')->name('admin.manageusers');
+	Route::get('manageusers','ManageUsersController@index')->name('admin.manageusers');
+	Route::get('manageusers/{id}','ManageUsersController@show');
 
 });
 
