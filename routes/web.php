@@ -13,17 +13,21 @@
 
 
 
-
+// Home Routes
 Route::get('/', 'HomeController@index')->name('home');
-
 Route::get('home', 'HomeController@home')->name('home');
 
 
+// Admin Only Routes
 Route::prefix('admin')->middleware('role:superadministrator|administrator')->group(function(){
-	Route::get('manageusers','ManageUsersController@index')->name('admin.manageusers');
-	Route::get('manageusers/{id}','ManageUsersController@show');
+	Route::get('manage','ManageUsersController@index')->name('admin.manage');
+	Route::get('manage/{id}','ManageUsersController@show');
 
 });
+
+
+// Translations Test Route
+Route::get('translationstest', 'TestController@index')->name('translationstest');
 
 
 

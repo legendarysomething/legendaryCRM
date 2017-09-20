@@ -2,8 +2,7 @@
 
 return [
 
-    // Test lang
-
+	// Dashboard Navigations Bar
     'welcome' => 'Welcome',
 
 ];

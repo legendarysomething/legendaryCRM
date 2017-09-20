@@ -149,9 +149,17 @@
                     </li>
                     
                     @role('superadministrator|administrator')
-                    <li class="{{ Request::is('admin/manageusers') ? 'active' : '' }}">
-                        <a href="{{route('admin.manageusers')}}" title="Dashboard">
-                            <i class="fa  fa-fw fa-user"></i> Manage Users
+                    <li class="{{ Request::is('admin/manage') ? 'active' : '' }}">
+                        <a href="{{route('admin.manage')}}" title="Manage Users">
+                            <i class="fa fa-users"></i> Manage Users
+                        </a>
+                    </li>
+                    @endrole
+
+                    @role('superadministrator|administrator')
+                    <li class="{{ Request::is('translationstest') ? 'active' : '' }}">
+                        <a href="{{route('translationstest')}}" title="Translations Test">
+                            <i class="fa fa-file-text"></i> Translations Test
                         </a>
                     </li>
                     @endrole

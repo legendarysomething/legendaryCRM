@@ -18,7 +18,7 @@ return [
         'translator' => [
             'profile' => 'r,u'
         ],
-        'subscriber' => [
+        'applicant' => [
             'profile' => 'r,u'
         ],
 
