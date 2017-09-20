@@ -32,9 +32,6 @@
     <link rel="stylesheet" href="{{asset('plugins/dataTables/css/dataTables.css')}}">
 
 
-    {{-- TODO: pace progress bar still not working for some reason --}}
-    {{-- <script src="{{asset('plugins/pace/pace.min.js"')}}"></script> --}}
-    <script type="https://cdnjs.cloudflare.com/ajax/libs/pace/0.5.3/pace.js"></script>
 
     
 </head>
@@ -214,7 +211,14 @@
     <script src="{{asset('js/vendor/jquery-1.11.1.min.js')}}"></script>
     <script src="{{asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('plugins/navgoco/jquery.navgoco.min.js')}}"></script>
+    <script src="{{asset('plugins/pace/pace.min.js')}}"></script>
+    <script src="{{asset('plugins/fullscreen/jquery.fullscreen-min.js')}}"></script>
     <script src="{{asset('js/src/app.js')}}"></script>
+
+    {{-- TODO: pace progress bar still not working for some reason --}}
+    {{-- <script type="https://cdnjs.cloudflare.com/ajax/libs/pace/0.5.3/pace.js"></script> --}}
+
+
 
     @yield('footer')
 

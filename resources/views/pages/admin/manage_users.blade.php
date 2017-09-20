@@ -52,7 +52,7 @@ Manage Users
                             <td>{{$user->username}}</td>
                             <td>{{$user->email}}</td>
                             <td>
-                                <a href="manageusers/{{$user->id}}" class="btn btn-success" style="color: #fff;">Edit User</a>
+                                <a href="{{route('admin.manage').'/'.$user->id}}" class="btn btn-success" style="color: #fff;">Edit User</a>
                             </td>
                         </tr>
                         @endforeach
