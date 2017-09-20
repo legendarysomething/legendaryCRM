@@ -140,26 +140,31 @@
                 </div>
             </div>
             <nav>
-                <h5 class="sidebar-header">Navigation</h5>
+                <h5 class="sidebar-header">@lang('main.navigation')</h5>
                 <ul class="nav nav-pills nav-stacked">
                     <li class=" {{ Request::is('home') ? 'active' : '' }}">
                         <a href="{{route('home')}}" title="Dashboard">
-                            <i class="fa  fa-fw fa-tachometer"></i> Dashboard
+                            <i class="fa  fa-fw fa-tachometer"></i> 
+                            @lang('main.dashboard')
                         </a>
                     </li>
                     
+
                     @role('superadministrator|administrator')
                     <li class="{{ Request::is('admin/manage') ? 'active' : '' }}">
                         <a href="{{route('admin.manage')}}" title="Manage Users">
-                            <i class="fa fa-users"></i> Manage Users
+                            <i class="fa fa-users"></i> 
+                            @lang('main.manageusers')
                         </a>
                     </li>
                     @endrole
+                    
 
-                    @role('superadministrator|administrator')
+                    @role('superadministrator|administrator|applicant')
                     <li class="{{ Request::is('translationstest') ? 'active' : '' }}">
                         <a href="{{route('translationstest')}}" title="Translations Test">
-                            <i class="fa fa-file-text"></i> Translations Test
+                            <i class="fa fa-file-text"></i> 
+                            @lang('main.translationstest')
                         </a>
                     </li>
                     @endrole

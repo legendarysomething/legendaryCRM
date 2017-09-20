@@ -3,6 +3,9 @@
 return [
 
 	// Dashboard Navigations Bar
-    'welcome' => 'Welcome',
+	'navigation' => 'Navigation',
+    'dashboard' => 'Dashboard',
+    'manageusers' => 'Manage Users',
+    'translationstest' => 'Translations Test',
 
 ];

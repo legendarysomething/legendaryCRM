@@ -27,7 +27,7 @@ Route::prefix('admin')->middleware('role:superadministrator|administrator')->gro
 
 
 // Translations Test Route
-Route::get('translationstest', 'TestController@index')->name('translationstest');
+Route::get('translationstest', 'TestController@index')->name('translationstest')->middleware('role:superadministrator|administrator|applicant');
 
 
 
