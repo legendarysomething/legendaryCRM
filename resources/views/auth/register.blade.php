@@ -23,6 +23,7 @@
         <div class="login-form">
             <div class="login-content">
                 <form method="post" role="form" id="form_register" action="{{ route('register') }}">
+                    {{ csrf_field() }}
                     <div class="form-register-success"> 
                         <i class="fa fa-check"></i>
                         <h3>You have been successfully registered.</h3>
@@ -73,6 +74,10 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon"> <i class="fa fa-lock"></i> </div> <input type="password" class="form-control" name="password" id="password" placeholder="Choose Password" autocomplete="off" /> </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"> <i class="fa fa-lock"></i> </div> <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Confirm Password" autocomplete="off" /> </div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
