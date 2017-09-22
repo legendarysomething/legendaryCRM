@@ -24,11 +24,48 @@
             <div class="login-content">
                 <form method="post" role="form" id="form_register" action="{{ route('register') }}">
                     {{ csrf_field() }}
-                    <div class="form-register-success"> 
+                    
+                    {{-- <div class="form-register-success"> 
                         <i class="fa fa-check"></i>
                         <h3>You have been successfully registered.</h3>
                         <p>We have emailed you the confirmation link for your account.</p>
-                    </div>
+                    </div> --}}
+
+                    {{-- Error Handling --}}
+                    @if ($errors->has('name'))
+                        <div class="form-login-error visible"> 
+                            <h3>Registration Failed.</h3>
+                            <p>{{ $errors->first('name') }}</p>
+                        </div>
+                    @endif
+                    @if ($errors->has('username'))
+                        <div class="form-login-error visible"> 
+                            <h3>Registration Failed.</h3>
+                            <p>{{ $errors->first('username') }}</p>
+                        </div>
+                    @endif
+                    @if ($errors->has('phonenumber'))
+                        <div class="form-login-error visible"> 
+                            <h3>Registration Failed.</h3>
+                            <p>{{ $errors->first('phonenumber') }}</p>
+                        </div>
+                    @endif
+                    @if ($errors->has('email'))
+                        <div class="form-login-error visible"> 
+                            <h3>Registration Failed.</h3>
+                            <p>{{ $errors->first('email') }}</p>
+                        </div>
+                    @endif
+                    @if ($errors->has('password'))
+                        <div class="form-login-error visible"> 
+                            <h3>Registration Failed.</h3>
+                            <p>{{ $errors->first('password') }}</p>
+                        </div>
+                    @endif
+                    {{-- Error Handling End --}}
+
+
+
                     <div class="form-steps">
                         <div class="step current" id="step-1">
                             <div class="form-group">
@@ -69,7 +106,7 @@
                             
                             <div class="form-group">
                                 <div class="input-group">
-                                    <div class="input-group-addon"> <i class="fa fa-phone"></i> </div> <input type="text" class="form-control" name="phonenumber" id="phonenumber" placeholder="Phone Number" data-mask="phone" autocomplete="off" /> </div>
+                                    <div class="input-group-addon"> <i class="fa fa-phone"></i> </div> <input type="text" class="form-control" name="phonenumber" id="phonenumber" placeholder="Phone Number" data-mask="[0-9\.]+" data-is-regex="true" autocomplete="off" /> </div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
