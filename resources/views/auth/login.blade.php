@@ -42,7 +42,7 @@
 
                     <div class="form-group">
                         <div class="input-group {{ $errors->has('email') ? 'validate-has-error' : 'focused' }}">
-                            <div class="input-group-addon"> <i class="fa fa-user-o"></i> </div>
+                            <div class="input-group-addon"> <i class="fa fa-user"></i> </div>
                             <input type="text" class="form-control custom-click-sam" name="email" id="email" placeholder="E-Mail" autocomplete="off" value="superadministrator@app.com"/> 
                         </div>
                     </div>
@@ -80,7 +80,7 @@
 	               <a href="{{ route('password.request') }}" class="link">Forgot your password?</a> 
 	               <br /> 
 	               {{-- TODO: Link --}}
-	               <a href="#">Contact Us!</a> 
+	               <a href="{{route('register')}}">Register Here!</a> 
                </div>
             </div>
          </div>

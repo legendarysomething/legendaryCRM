@@ -20,6 +20,8 @@
     {{-- Login Form JS --}}
     <script src="{{asset('js/jquery.validate.min.js')}}" id="script-resource-8"></script>
     <script src="{{asset('js/neon-login.js')}}" id="script-resource-9"></script>
+    <script src="{{asset('js/neon-register.js')}}" id="script-resource-9"></script>
+    <script src="{{asset('js/jquery.inputmask.bundle.js')}}" id="script-resource-9"></script>
 
     <!-- JavaScripts initializations and stuff --> 
     <script src="{{ asset('js/neon-custom.js')}}" id="script-resource-18"></script> 

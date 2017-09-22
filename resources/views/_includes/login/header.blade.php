@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic" id="style-resource-3">
 
     <link rel="stylesheet" href="{{ asset('js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css')}}" id="style-resource-1">
-    <link rel="stylesheet" href="{{ asset('css/font-icons/entypo/css/entypo.css')}}" id="style-resource-2">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}" id="style-resource-4">
     <link rel="stylesheet" href="{{ asset('css/neon-core.css')}}" id="style-resource-5">
     <link rel="stylesheet" href="{{ asset('css/neon-theme.css')}}" id="style-resource-6">
