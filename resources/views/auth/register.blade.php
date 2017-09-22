@@ -23,7 +23,8 @@
         <div class="login-form">
             <div class="login-content">
                 <form method="post" role="form" id="form_register">
-                    <div class="form-register-success"> <i class="entypo-check"></i>
+                    <div class="form-register-success"> 
+                        <i class="fa fa-check"></i>
                         <h3>You have been successfully registered.</h3>
                         <p>We have emailed you the confirmation link for your account.</p>
                     </div>

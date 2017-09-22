@@ -4,7 +4,6 @@
     <script src="{{asset('js/gsap/TweenMax.min.js')}}" id="script-resource-1"></script>
 
     {{-- Custom Javascript --}}
-    <script src="{{ asset('js/1_custom/login_page.js')}}" id="script-resource-1"></script> 
 
 
     {{-- Main --}}
@@ -27,6 +26,7 @@
     <script src="{{ asset('js/neon-custom.js')}}" id="script-resource-18"></script> 
     <script src="{{ asset('js/neon-skins.js')}}" id="script-resource-12"></script>
 
+    <script src="{{ asset('js/1_custom/login_page.js')}}" id="script-resource-1"></script> 
 {{-- Todo del neon-demo? --}}
 
 

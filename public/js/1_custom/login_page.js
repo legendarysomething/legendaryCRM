@@ -18,32 +18,26 @@ $(document).ready(function()
         var email = $("input#email").val().trim();
         var password = $("input#password").val().trim();
 
-        // Form Input Validation
-        if (email == '' || password == '')
-        {
-            $(".input-group").addClass('validate-has-error');
-        }
-        else
-        {
-            // This will hide the login form and init the progress bar
-            $(".login-page").addClass('logging-in'); 
-            // Hide Errors
-            $(".form-login-error").slideUp('fast');
+       
+        // This will hide the login form and init the progress bar
+        $(".login-page").addClass('logging-in'); 
+        // Hide Errors
+        $(".form-login-error").slideUp('fast');
 
-            // We will wait till the transition ends                
-            setTimeout(function()
-            {
-                
-                // The form data are subbmitted, we can forward the progress to 70%
-                neonLogin.setPercentage(99);
-                setTimeout(function() {
-                    document.getElementById('login-form-submit').submit();
-                }, 200);
+        // We will wait till the transition ends                
+        setTimeout(function()
+        {
+            
+            // The form data are subbmitted, we can forward the progress to 70%
+            neonLogin.setPercentage(99);
+            setTimeout(function() {
+                document.getElementById('form_login').submit();
+            }, 200);
 
+            
                 
-                    
-            }, 650);
-        }
+        }, 650);
+    
 
     });
     

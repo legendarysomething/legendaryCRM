@@ -33,22 +33,22 @@
                {{-- <form method="post" role="form" id="form_login"> --}}
 
 
-               <form class="form-horizontal" role="form" id="form_login" method="POST" action="{{ route('login') }}">
+               <form class="form-horizontal" id="login-form-submit" method="POST" action="{{ route('login') }}">
                     {{ csrf_field() }}
 
-                    <div class="form-login-error ">
+                    <div class="form-login-error {{ ($errors->has('email') || $errors->has('password')) ? 'visible' : '' }}">
                         <h3>Invalid Login Credentials</h3>
                     </div>
 
                     <div class="form-group">
-                        <div class="input-group">
+                        <div class="input-group {{ $errors->has('email') ? 'validate-has-error' : 'focused' }}">
                             <div class="input-group-addon"> <i class="fa fa-user"></i> </div>
                             <input type="text" class="form-control custom-click-sam" name="email" id="email" placeholder="E-Mail" autocomplete="off" value="superadministrator@app.com"/> 
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <div class="input-group">
+                        <div class="input-group {{ $errors->has('password') ? 'validate-has-error' : 'focused' }}">
                             <div class="input-group-addon"> <i class="fa fa-key"></i> </div>
                             <input type="password" class="form-control custom-click-sam" name="password" id="password" placeholder="Password" autocomplete="off" value="password"/>
                         </div>
@@ -62,10 +62,10 @@
 
                     <div class="form-group"> 
                         <div id="custom-login-sam">
-                            {{-- <div class="btn btn-primary btn-block btn-login"> --}}
+                            <div class="btn btn-primary btn-block btn-login">
                                 {{-- <div onclick="event.preventDefault(); document.getElementById('login-form-submit').submit();"> --}}
-                                <button class="btn btn-primary btn-block btn-login" type="submit">Log In<i class="fa fa-sign-in"></i></button>
-                                
+                                Log In<i class="fa fa-sign-in"></i> 
+                            </div> 
                         </div>
                     </div>
                   {{-- <div class="form-group"> <em>- or -</em> </div> --}}
