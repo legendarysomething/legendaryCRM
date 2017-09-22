@@ -215,8 +215,6 @@
     <script src="{{asset('plugins/fullscreen/jquery.fullscreen-min.js')}}"></script>
     <script src="{{asset('js/src/app.js')}}"></script>
 
-    {{-- TODO: pace progress bar still not working for some reason --}}
-    {{-- <script type="https://cdnjs.cloudflare.com/ajax/libs/pace/0.5.3/pace.js"></script> --}}
 
 
 
