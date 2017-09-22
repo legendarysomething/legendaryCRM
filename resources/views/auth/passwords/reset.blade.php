@@ -52,7 +52,7 @@
                		<i class="fa fa-lock"></i>&nbsp;Return to Login Page
                 </a> 
                 <br /> 
-                <a href="#">Contact Us!</a>
+                    <a href="{{route('register')}}">Register Here!</a> 
                </div>
             </div>
          </div>

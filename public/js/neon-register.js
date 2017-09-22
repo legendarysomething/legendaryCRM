@@ -12,6 +12,14 @@ var neonRegister = neonRegister || {};
 	
 	$(document).ready(function()
 	{
+		 // Lil bit of hack code to prevent form submission on first page 
+		$("#email").keydown(function(event){
+			if(event.keyCode == 13) {
+				event.preventDefault();
+				$("#step-2-c").click();
+			}
+		});
+
 		neonRegister.$container = $("#form_register");
 		neonRegister.$steps = neonRegister.$container.find(".form-steps");
 		neonRegister.$steps_list = neonRegister.$steps.find(".step");
@@ -34,6 +42,10 @@ var neonRegister = neonRegister || {};
 				},
 				
 				password: {
+					required: true
+				},
+
+				phonenumber: {
 					required: true
 				},
 				

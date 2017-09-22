@@ -49,10 +49,10 @@
                <div class="login-bottom-links"> 
                	{{-- TODO: redirection to login page --}}
                	<a href="{{ route('login') }}" class="link"> 
-               		<i class="fa fa-lock"></i>&nbsp;Return to Login Page
+               		<i class="fa fa-lock"></i>&nbsp;&nbsp;Return to Login Page
                 </a> 
                 <br /> 
-                <a href="#">Contact Us!</a>
+                    <a href="{{route('register')}}">Register Here!</a> 
                </div>
             </div>
          </div>
