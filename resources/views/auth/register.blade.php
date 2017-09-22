@@ -37,26 +37,22 @@
                             <h3>Registration Failed.</h3>
                             <p>{{ $errors->first('name') }}</p>
                         </div>
-                    @endif
-                    @if ($errors->has('username'))
+                    @elseif ($errors->has('username'))
                         <div class="form-login-error visible"> 
                             <h3>Registration Failed.</h3>
                             <p>{{ $errors->first('username') }}</p>
                         </div>
-                    @endif
-                    @if ($errors->has('phonenumber'))
+                    @elseif ($errors->has('phonenumber'))
                         <div class="form-login-error visible"> 
                             <h3>Registration Failed.</h3>
                             <p>{{ $errors->first('phonenumber') }}</p>
                         </div>
-                    @endif
-                    @if ($errors->has('email'))
+                    @elseif ($errors->has('email'))
                         <div class="form-login-error visible"> 
                             <h3>Registration Failed.</h3>
                             <p>{{ $errors->first('email') }}</p>
                         </div>
-                    @endif
-                    @if ($errors->has('password'))
+                    @elseif ($errors->has('password'))
                         <div class="form-login-error visible"> 
                             <h3>Registration Failed.</h3>
                             <p>{{ $errors->first('password') }}</p>

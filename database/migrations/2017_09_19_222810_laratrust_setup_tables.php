@@ -34,6 +34,7 @@ class LaratrustSetupTables extends Migration
             $table->unsignedInteger('role_id');
             $table->unsignedInteger('user_id');
             $table->string('user_type');
+            $table->timestamps();
 
             $table->foreign('role_id')->references('id')->on('roles')
                 ->onUpdate('cascade')->onDelete('cascade');
@@ -46,6 +47,7 @@ class LaratrustSetupTables extends Migration
             $table->unsignedInteger('permission_id');
             $table->unsignedInteger('user_id');
             $table->string('user_type');
+            $table->timestamps();
 
             $table->foreign('permission_id')->references('id')->on('permissions')
                 ->onUpdate('cascade')->onDelete('cascade');
