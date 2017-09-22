@@ -17,6 +17,8 @@
     <title>@yield('pageheader')</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    {{-- Favicon --}}
+    <link rel="icon" href="{{asset('img/icons/favicon.ico')}}" />
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{asset('plugins/bootstrap/css/bootstrap.min.css')}}">
     <!-- Fonts  -->

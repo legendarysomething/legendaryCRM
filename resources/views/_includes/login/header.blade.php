@@ -8,7 +8,9 @@
     <meta name="description" content="Munchie Systems" />
     <meta name="author" content="sam" />
 
-    {{-- <link rel="icon" href="{{ asset('images/favicon.ico')}}"> --}}
+     {{-- Favicon --}}
+    <link rel="icon" href="{{asset('img/icons/favicon.ico')}}" />
+
     <title>Munchie Systems</title>
     {{-- Font Awesome CDN --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
