@@ -11,6 +11,7 @@ Translations Test
 <!-- Editor-->
 <link rel="stylesheet" href="{{asset('plugins/bootstrap-wysihtml5/css/bootstrap-wysihtml5.css')}}">
 <link rel="stylesheet" href="{{asset('plugins/bootstrap-wysihtml5/css/bootstrap3-wysiwyg5-color.css')}}">
+
 @endsection
 
 

@@ -3,21 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Role;
 
-
-class ManageUsersController extends Controller
+class TestSubmissionsController extends Controller
 {
-
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -25,33 +13,7 @@ class ManageUsersController extends Controller
      */
     public function index()
     {
-
-        $users = User::all();
-
-            
-
-        return view('pages.admin.manage_users',compact('users')); 
-
-    }
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $user = User::findOrFail($id);
-        // Get all except the superadministrator role
-        $roles = Role::where('name', '!=' , 'superadministrator')->get();
-
-        $role_user = User::findOrFail($id)->roles()->get();
-
-                   
-
-        return view('pages.admin.manage_single_user',compact('user','roles','role_user'));
+        return view('pages.admin.test_submissions');
     }
 
     /**
@@ -75,7 +37,16 @@ class ManageUsersController extends Controller
         //
     }
 
-    
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.

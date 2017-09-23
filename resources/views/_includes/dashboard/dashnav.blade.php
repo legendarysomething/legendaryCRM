@@ -159,6 +159,15 @@
                         </a>
                     </li>
                     @endrole
+
+                    @role('superadministrator|administrator')
+                    <li class="{{ Request::is('admin/test_submissions') ? 'active' : '' }}">
+                        <a href="{{route('admin.test_submissions')}}" title="Manage Submissions">
+                            <i class="fa fa-clipboard"></i> 
+                            @lang('main.test_submissions')
+                        </a>
+                    </li>
+                    @endrole
                     
 
                     @role('superadministrator|administrator|applicant')
