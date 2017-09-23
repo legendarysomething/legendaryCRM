@@ -77,15 +77,9 @@ class RegisterController extends Controller
         ]);
 
         // Assign the default role to the user
-        $userId = $user->id;
-        $roleId = Role::where('name','applicant')->get();
-        $roleId = $roleId[0]['id'];
-
-        RoleUser::create([
-            'role_id'       => $roleId,
-            'user_id'       => $userId,
-            'user_type'     => 'App\User',
-        ]);
+        $role = Role::where('name','applicant')->get();
+      
+        $user->attachRole($role[0]);
 
 
         return $user;
