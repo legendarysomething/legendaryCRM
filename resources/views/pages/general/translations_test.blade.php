@@ -56,13 +56,9 @@ Home
                     <hr><br>
                     <h3>@lang('translationstest.tt_10')</h3><br>
                     {{-- Buttons to download test content --}}
-                    <form method="get" style="display: inline-block;" action="{{asset('downloads.translations_test.TestMaterial.pdf')}}">
-                        <button type="submit" class="btn btn-success">@lang('translationstest.dl_1')</button>
-                    </form>
+                    <a href="{{ asset('downloads/translations_test/TestMaterial.pdf') }}" style="color: white;" download="" class="btn btn-success">@lang('translationstest.dl_1')</a>
                     &nbsp;&nbsp;&nbsp;
-                    <form method="get" style="display: inline-block;" action="{{asset('downloads.translations_test.SampleTranslation.pdf')}}">
-                        <button type="submit" class="btn btn-success">@lang('translationstest.dl_2')</button>
-                    </form>    
+                    <a href="{{ asset('downloads/translations_test/SampleTranslation.pdf') }}" style="color: white;" download="" class="btn btn-success">@lang('translationstest.dl_2')</a>
                 </div>
             </div>
         </div>
