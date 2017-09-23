@@ -20,8 +20,10 @@ Route::get('home', 'HomeController@home')->name('home');
 
 // Admin Only Routes
 Route::prefix('admin')->middleware('role:superadministrator|administrator')->group(function(){
+	
 	Route::get('manage','ManageUsersController@index')->name('admin.manage');
 	Route::get('manage/{id}','ManageUsersController@show');
+	// Change User Roles
 
 });
 

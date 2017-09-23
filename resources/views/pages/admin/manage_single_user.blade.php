@@ -55,6 +55,13 @@ Manage Users
                                 <br>
                                 {{$user->phonenumber}}
                             </address>
+                            <address>
+                                <strong>Member Since</strong>
+                                <br>
+                                {{$user->created_at->toFormattedDateString()}}
+                            </address>
+
+                            
                             
                             {{-- <div class="connect">
                                 <button type="button" class="btn btn-success btn-trans"><span class="fa fa-check"></span> Following</button>
@@ -64,9 +71,12 @@ Manage Users
                         </div>
                     </div>
                 </div>
-                <section class="panel timeline-post-to animated fadeInUp">
+                <br>
+                <section class="panel timeline-post-to">
                     <div class="panel-body">
                         <form role="form">
+                            <h3>Leave a comment</h3>
+                            <br>
                             <textarea class="form-control" placeholder="Add a comment"></textarea>
                             <div class="row">
                                 <div class="col-sm-6">
@@ -108,12 +118,20 @@ Manage Users
                                             <label class="control-label">Role Management</label>
                                         </div>
                                             
-
+                                        {{-- Check the checkboxes of roles that user has --}}
                                         <div class="col-sm-6 pull-right">
                                             @foreach ($roles as $role)
                                                 <div class="radio">
-                                                    <input class="icheck" type="checkbox" name="check1">
-                                                    <label>{{$role->display_name}}</label>
+                                                @foreach ($role_user as $ru)
+                                                    @if($ru->name == $role->name)
+                                                        <input class="icheck" checked="" type="checkbox" name="check1">
+                                                        <label>{{$role->display_name}}</label>
+                                                        </div>
+                                                         <?php continue 2; ?>
+                                                    @endif
+                                                @endforeach
+                                                <input class="icheck" type="checkbox" name="check1">
+                                                <label>{{$role->display_name}}</label>
                                                 </div>
                                             @endforeach
                                         </div>

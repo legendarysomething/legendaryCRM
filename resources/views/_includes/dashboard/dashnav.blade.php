@@ -32,6 +32,8 @@
     <script src="{{asset('js/vendor/modernizr-2.6.2.min.js')}}"></script>
     <!-- DataTables-->
     <link rel="stylesheet" href="{{asset('plugins/dataTables/css/dataTables.css')}}">
+    {{-- For any extra header scripts --}}
+    @yield('header')
 
 
 
