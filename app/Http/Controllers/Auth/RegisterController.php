@@ -78,7 +78,6 @@ class RegisterController extends Controller
 
         // Assign the default role to the user
         $role = Role::where('name','applicant')->get();
-      
         $user->attachRole($role[0]);
 
 

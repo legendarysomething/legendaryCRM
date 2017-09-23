@@ -154,7 +154,7 @@ Manage Users
     {{-- Comments Section --}}
     <div class="row">
         <div class="col-md-12">
-            <section class="panel  timeline-post">
+            <section class="panel  timeline-post animated fadeInUp">
                 <div class="panel-heading">
                     <h3 class="panel-title">Comments</h3>
                 </div>

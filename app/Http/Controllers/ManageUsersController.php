@@ -43,7 +43,9 @@ class ManageUsersController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-        $roles = Role::all();
+        // Get all except the superadministrator role
+        $roles = Role::where('name', '!=' , 'superadministrator')->get();
+
         $role_user = User::findOrFail($id)->roles()->get();
 
         return view('pages.admin.manage_single_user',compact('user','roles','role_user'));

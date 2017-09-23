@@ -3,7 +3,7 @@
 
 {{-- Page Header --}}
 @section('pageheader')
-Home
+Translations Test
 @endsection
 {{-- End Page Header --}}
 
