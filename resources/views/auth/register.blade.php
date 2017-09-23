@@ -31,35 +31,15 @@
                         <p>We have emailed you the confirmation link for your account.</p>
                     </div> --}}
 
+                    @if ($errors->any())
                     {{-- Error Handling --}}
-                    @if ($errors->has('name'))
                         <div class="form-login-error visible"> 
                             <h3>Registration Failed.</h3>
-                            <p>{{ $errors->first('name') }}</p>
-                        </div>
-                    @elseif ($errors->has('username'))
-                        <div class="form-login-error visible"> 
-                            <h3>Registration Failed.</h3>
-                            <p>{{ $errors->first('username') }}</p>
-                        </div>
-                    @elseif ($errors->has('phonenumber'))
-                        <div class="form-login-error visible"> 
-                            <h3>Registration Failed.</h3>
-                            <p>{{ $errors->first('phonenumber') }}</p>
-                        </div>
-                    @elseif ($errors->has('email'))
-                        <div class="form-login-error visible"> 
-                            <h3>Registration Failed.</h3>
-                            <p>{{ $errors->first('email') }}</p>
-                        </div>
-                    @elseif ($errors->has('password'))
-                        <div class="form-login-error visible"> 
-                            <h3>Registration Failed.</h3>
-                            <p>{{ $errors->first('password') }}</p>
+                            @foreach($errors->all() as $error)
+                                <p>{{ $error }}</p>
+                            @endforeach
                         </div>
                     @endif
-                    {{-- Error Handling End --}}
-
 
 
                     <div class="form-steps">
