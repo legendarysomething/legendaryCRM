@@ -32,7 +32,7 @@ Home
 <section id="main-content">
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
+            <div class="panel panel-default animated fadeInUp">
                 <div class="panel-heading">
                     <h3 class="panel-title">Instructions</h3>
                 </div>
@@ -56,15 +56,18 @@ Home
                     <hr><br>
                     <h3>@lang('translationstest.tt_10')</h3><br>
                     {{-- Buttons to download test content --}}
-                    <button type="submit" class="btn btn-success">@lang('translationstest.dl_1')</button>
+                    <form method="get" style="display: inline-block;" action="{{asset('downloads.translations_test.TestMaterial.pdf')}}">
+                        <button type="submit" class="btn btn-success">@lang('translationstest.dl_1')</button>
+                    </form>
                     &nbsp;&nbsp;&nbsp;
-                    <button type="submit" class="btn btn-success">@lang('translationstest.dl_2')</button>
-
+                    <form method="get" style="display: inline-block;" action="{{asset('downloads.translations_test.SampleTranslation.pdf')}}">
+                        <button type="submit" class="btn btn-success">@lang('translationstest.dl_2')</button>
+                    </form>    
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-default">
+            <div class="panel panel-default animated fadeInUp">
                 <div class="panel-heading">
                     <h3 class="panel-title">Submission Attempt</h3>
                 </div>

@@ -152,7 +152,7 @@
                     
 
                     @role('superadministrator|administrator')
-                    <li class="{{ Request::is('admin/manage') ? 'active' : '' }}">
+                    <li class="{{ (Request::is('admin/manage') || Request::is('admin/manage/*')) ? 'active' : '' }}">
                         <a href="{{route('admin.manage')}}" title="Manage Users">
                             <i class="fa fa-users"></i> 
                             @lang('main.manageusers')
