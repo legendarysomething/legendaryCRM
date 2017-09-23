@@ -14,167 +14,208 @@ Manage Users
 
 
 <div class="pageheader">
-                <h1>Profile</h1>
-                <div class="breadcrumb-wrapper hidden-xs">
-                    <span class="label">You are here:</span>
-                    <ol class="breadcrumb">
-                        <li><a href="index.html">Dashboard</a>
-                        </li>
-                        <li>Pages</li>
-                        <li class="active">Profile</li>
-                    </ol>
+
+    <h1>{{$user->username}}'s Profile</h1>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li>Admin</li>
+            <li>Manage Users</li>
+            <li class="active">{{$user->username}}'s Profile</li>
+        </ol>
+    </div>
+</div>
+<section id="main-content">
+    <div class="row">
+        <div class="col-md-6">
+            <section class="panel animated fadeInUp">
+                <div class="panel-body profile-wrapper">
+                    <div class="col-md-3">
+                        <div class="profile-pic text-center">
+                            <img src="{{asset('img/profile.jpg')}}" alt="" class="img-circle">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-1">
+                        <div class="profile-info">
+                            <h1>{{$user->username}}</h1>
+                            <span class="text-muted">UI Designer</span>
+                            <br><br>
+                            <address>
+                                <strong>Full Name</strong>
+                                <br>
+                                {{$user->name}}
+                            </address>
+                            <address>
+                                <strong>Email</strong>
+                                <br>
+                                {{$user->email}}
+                            </address>
+                            <address>
+                                <strong>Phone Number</strong>
+                                <br>
+                                {{$user->phonenumber}}
+                            </address>
+                            
+                            {{-- <div class="connect">
+                                <button type="button" class="btn btn-success btn-trans"><span class="fa fa-check"></span> Following</button>
+                                <button type="button" class="btn btn-primary btn-trans"><span class="fa fa-comments"></span> Chat</button>
+                            </div> --}}
+                            
+                        </div>
+                    </div>
+                </div>
+                <section class="panel timeline-post-to animated fadeInUp">
+                    <div class="panel-body">
+                        <form role="form">
+                            <textarea class="form-control" placeholder="Add a comment"></textarea>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    {{-- <a class="btn btn-sm btn-default"><i class="fa fa-camera"></i></a>
+                                    <a class="btn btn-sm btn-default"><i class="fa fa-video-camera"></i></a>
+                                    <a class="btn btn-sm btn-default"><i class="fa fa-music"></i></a>
+                                    <a class="btn btn-sm btn-default"><i class="fa fa-map-marker"></i></a> --}}
+                                </div>
+                                <div class="col-sm-6 text-right">
+                                    <button type="submit" class="btn btn-success">Post</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </section>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-default animated fadeInUp">
+                <div class="panel-heading">
+                    <h3 class="panel-title">User Management Section</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-wrapper tab-primary">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#home1" data-toggle="tab">Roles</a>
+                            </li>
+                            
+                            
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="home1">
+                                
+                                <div class="form-group">
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <label class="control-label">Role Management</label>
+                                        </div>
+                                            
+
+                                        <div class="col-sm-6 pull-right">
+                                            @foreach ($roles as $role)
+                                                <div class="radio">
+                                                    <input class="icheck" type="checkbox" name="check1">
+                                                    <label>{{$role->display_name}}</label>
+                                                </div>
+                                            @endforeach
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Update Roles</button>
                 </div>
             </div>
-            <section id="main-content">
-                <div class="row">
-                    <div class="col-md-6">
-                        <section class="panel">
-                            <div class="panel-body profile-wrapper">
-                                <div class="col-md-3">
-                                    <div class="profile-pic text-center">
-                                        <img src="{{asset('img/profile.jpg')}}" alt="" class="img-circle">
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="profile-info">
-                                        <h1>{{$user->username}}</h1>
-                                        <span class="text-muted">UI Designer</span>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                        </p>
-                                        <div class="connect">
-                                            <button type="button" class="btn btn-success btn-trans"><span class="fa fa-check"></span> Following</button>
-                                            <button type="button" class="btn btn-primary btn-trans"><span class="fa fa-comments"></span> Chat</button>
-                                        </div>
-                                        <div class="social">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-lg fa-facebook"></i></a>
-                                                </li>
-                                                <li><a href="#"><i class="fa fa-lg fa-twitter"></i></a>
-                                                </li>
-                                                <li><a href="#"><i class="fa fa-lg fa-github"></i></a>
-                                                </li>
-                                                <li><a href="#"><i class="fa fa-lg fa-linkedin"></i></a>
-                                                </li>
-                                                <li><a href="#"><i class="fa fa-lg fa-instagram"></i></a>
-                                                </li>
-                                                <li><a href="#"><i class="fa fa-lg fa-dribbble"></i></a>
-                                                </li>
+        </div>
 
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    <div class="col-md-6">
-                        <section class="panel  timeline-post-to">
-                            <div class="panel-body">
-                                <form role="form">
-                                    <textarea class="form-control" placeholder="What's on your mind?"></textarea>
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <a class="btn btn-sm btn-default"><i class="fa fa-camera"></i></a>
-                                            <a class="btn btn-sm btn-default"><i class="fa fa-video-camera"></i></a>
-                                            <a class="btn btn-sm btn-default"><i class="fa fa-music"></i></a>
-                                            <a class="btn btn-sm btn-default"><i class="fa fa-map-marker"></i></a>
-                                        </div>
-                                        <div class="col-sm-6 text-right">
-                                            <button type="submit" class="btn btn-primary">Post</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </section>
-                        <section class="panel  timeline-post">
-                            <div class="panel-body">
-                                <ul>
-                                    <li>
-                                        <div class="date">
-                                            <span>23</span>
-                                            <span class="small">Feb</span>
-                                        </div>
-                                        <h4>Lorem ipsum dolor sit</h4>
-                                        <p>
-                                            Tortor metus suscipit lectus lacinia mi. Duis quis ullamcorper, felis consequat ut felis sit, pellentesque sit nunc, porttitor a, neque enim metus sed dictum scelerisque. Ante ornare, ante nunc ac, et feugiat justo urna, pharetra velit convallis, sit magna odio in nunc sit.
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <div class="date">
-                                            <span>14</span>
-                                            <span class="small">Feb</span>
-                                        </div>
-                                        <h4>Something good can work.</h4>
-                                        <p>
 
-                                            <div class='embed-container'>
-                                                <iframe src='//player.vimeo.com/video/16566326?title=0&amp;byline=0&amp;portrait=0"' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                                            </div>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <div class="date">
-                                            <span>12</span>
-                                            <span class="small">Jan</span>
-                                        </div>
-                                        <h4>Lorem ipsum dolor!</h4>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                        </p>
+    </div>
 
-                                    </li>
-                                    <li>
-                                        <div class="date">
-                                            <span>01</span>
-                                            <span class="small">Jan</span>
-                                        </div>
-                                        <h4>Vacation photos</h4>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <img src="assets/img/vac-1.jpg" alt="" />
-                                            </div>
-                                            <div class="col-md-6">
-                                                <img src="assets/img/vac-2.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <img src="assets/img/vac-3.jpg" alt="" />
-                                            </div>
-                                            <div class="col-md-6">
-                                                <img src="assets/img/vac-4.jpg" alt="" />
-                                            </div>
-                                        </div>
 
-                                    </li>
-                                    <li>
-                                        <div class="date">
-                                            <span>23</span>
-                                            <span class="small">Dec</span>
-                                        </div>
-                                        <h4>Lorem ipsum dolor!</h4>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <div class="date">
-                                            <span>14</span>
-                                            <span class="small">Dec</span>
-                                        </div>
-                                        <h4>Lorem ipsum dolor!</h4>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                        </p>
-                                    </li>
-                                </ul>
-
-                            </div>
-                        </section>
-
-                    </div>
+    {{-- Comments Section --}}
+    <div class="row">
+        <div class="col-md-12">
+            <section class="panel  timeline-post">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Comments</h3>
                 </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>
+                            <div class="date">
+                                <span>23</span>
+                                <span class="small">Feb</span>
+                            </div>
+                            <h4>Lorem ipsum dolor sit</h4>
+                            <p>
+                                Tortor metus suscipit lectus lacinia mi. Duis quis ullamcorper, felis consequat ut felis sit, pellentesque sit nunc, porttitor a, neque enim metus sed dictum scelerisque. Ante ornare, ante nunc ac, et feugiat justo urna, pharetra velit convallis, sit magna odio in nunc sit.
+                            </p>
+                        </li>
+                        
+                        <li>
+                            <div class="date">
+                                <span>12</span>
+                                <span class="small">Jan</span>
+                            </div>
+                            <h4>Lorem ipsum dolor!</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            </p>
+
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>01</span>
+                                <span class="small">Jan</span>
+                            </div>
+                            <h4>Vacation photos</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="assets/img/vac-1.jpg" alt="" />
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="assets/img/vac-2.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="assets/img/vac-3.jpg" alt="" />
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="assets/img/vac-4.jpg" alt="" />
+                                </div>
+                            </div>
+
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>23</span>
+                                <span class="small">Dec</span>
+                            </div>
+                            <h4>Lorem ipsum dolor!</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            </p>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>14</span>
+                                <span class="small">Dec</span>
+                            </div>
+                            <h4>Lorem ipsum dolor!</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            </p>
+                        </li>
+                    </ul>
+
+                </div>
+            </section>
+
+        </div>
+
+    </div>
 
 
 

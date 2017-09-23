@@ -3,7 +3,7 @@
 
 {{-- Page Header --}}
 @section('pageheader')
-Home
+Dashboard
 @endsection
 {{-- End Page Header --}}
 

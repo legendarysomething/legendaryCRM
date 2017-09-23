@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Role;
 
 
 class ManageUsersController extends Controller
@@ -42,8 +43,9 @@ class ManageUsersController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
+        $roles = Role::all();
 
-        return view('pages.admin.manage_single_user',compact('user'));
+        return view('pages.admin.manage_single_user',compact('user','roles'));
     }
 
     /**
