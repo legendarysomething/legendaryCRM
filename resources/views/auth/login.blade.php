@@ -42,7 +42,7 @@
                     <div class="form-group">
                      <div class="input-group">
                         <div class="input-group-addon"> <i class="fa fa-user"></i> </div>
-                            <input type="text" class="form-control" name="email" id="email" data-mask="email" placeholder="E-Mail" autocomplete="off" value="superadministrator@app.com"/> 
+                            <input type="text" class="form-control" name="email" id="email" placeholder="E-Mail" autocomplete="off" value="superadministrator@app.com"/> 
                      </div>
                   </div>
                   <div class="form-group">

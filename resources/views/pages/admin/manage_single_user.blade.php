@@ -37,7 +37,15 @@ Manage Users
                     </div>
                     <div class="col-md-8 col-md-offset-1">
                         <div class="profile-info">
-                            <h1>{{$user->username}}</h1>
+                            <h1>
+                                {{$user->username}}
+                                @foreach ($role_user as $ru)
+                                    @if($ru->name == "superadministrator")
+                                        <i class="icon-trophy"></i>
+                                    @endif
+                                @endforeach
+                            </h1>
+
                             <span class="text-muted">UI Designer</span>
                             <br><br>
                             <address>
@@ -117,7 +125,8 @@ Manage Users
                                         <div class="col-sm-3">
                                             <label class="control-label">Role Management</label>
                                         </div>
-                                            
+
+
                                         {{-- Check the checkboxes of roles that user has --}}
                                         <div class="col-sm-6 pull-right">
                                             @foreach ($roles as $role)

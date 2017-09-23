@@ -48,6 +48,8 @@ class ManageUsersController extends Controller
 
         $role_user = User::findOrFail($id)->roles()->get();
 
+                   
+
         return view('pages.admin.manage_single_user',compact('user','roles','role_user'));
     }
 
