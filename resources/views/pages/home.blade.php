@@ -21,19 +21,54 @@ Dashboard
         </ol>
     </div>
 </div>
-<section id="main-content">
+
+
+<section id="main-content" class="animated fadeInUp">
     <div class="row">
-        <div class="col-md-12 col-lg-12">
-			<div class="panel panel-default">
-    			<div class="panel-body ng-binding">
-    				Welcome to the Home Page.
-   				 </div>
-			</div>
-		</div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-solid-info widget-mini">
+                        <div class="panel-body">
+                            <i class="icon-user"></i>
+                            <span class="total text-center">12,680</span>
+                            <span class="title text-center">New Signups</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-solid-success widget-mini">
+                        <div class="panel-body">
+                            <i class="icon-bar-chart"></i>
+                            <span class="total text-center">$3,200</span>
+                            <span class="title text-center">Earnings</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel widget-mini">
+                        <div class="panel-body">
+                            <i class="icon-support"></i>
+                            <span class="total text-center">1,230</span>
+                            <span class="title text-center">Support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel widget-mini">
+                        <div class="panel-body">
+                            <i class="icon-envelope-open"></i>
+                            <span class="total text-center">1,680</span>
+                            <span class="title text-center">Messages</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p><button type="button" class="btn btn-success" onclick="showSuccess('Wao')">Show Success Message</button></p>
+        </div>
+        
+        
     </div>
-    <p>
-    <button type="button" class="btn btn-success" onclick="showSuccess('We have lift off!')">Show Success Message</button>
-    </p>
 </section>
 
 
@@ -45,6 +80,8 @@ Dashboard
 
 
 
+
+{{-- Notifications Js/CSS for testing    --}}
 @section('footer')
  <!--Page Level JS for Demo-->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>

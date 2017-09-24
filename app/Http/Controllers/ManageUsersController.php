@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
+use Illuminate\Support\Facades\Auth;
 
 
 class ManageUsersController extends Controller
@@ -98,7 +99,22 @@ class ManageUsersController extends Controller
     {
         // Sync Roles
         $user = User::findOrFail($id);
-        $user->syncRoles($request->roles);
+
+        
+        if (Auth::user()->hasRole('superadministrator') && !$user->hasRole(['superadministrator']))
+        {
+            // Only Allow Superadmins to manage Admin Roles
+            $user->syncRoles($request->roles);
+        }
+        elseif(!$user->hasRole(['superadministrator|administrator']))
+        {
+            // Do not allow updates on profiles that are superadmins
+            $user->syncRoles($request->roles);
+        }
+        else
+        {
+            // Failure Message here
+        }
 
 
         // Return the user to the user management page
