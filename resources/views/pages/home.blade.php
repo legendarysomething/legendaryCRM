@@ -31,17 +31,8 @@ Dashboard
                     <div class="panel panel-solid-info widget-mini">
                         <div class="panel-body">
                             <i class="icon-user"></i>
-                            <span class="total text-center">12,680</span>
+                            <span class="total text-center">12</span>
                             <span class="title text-center">New Signups</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="panel panel-solid-success widget-mini">
-                        <div class="panel-body">
-                            <i class="icon-bar-chart"></i>
-                            <span class="total text-center">$3,200</span>
-                            <span class="title text-center">Earnings</span>
                         </div>
                     </div>
                 </div>
@@ -49,8 +40,8 @@ Dashboard
                     <div class="panel widget-mini">
                         <div class="panel-body">
                             <i class="icon-support"></i>
-                            <span class="total text-center">1,230</span>
-                            <span class="title text-center">Support</span>
+                            <span class="total text-center">5</span>
+                            <span class="title text-center">First Test</span>
                         </div>
                     </div>
                 </div>
@@ -58,8 +49,17 @@ Dashboard
                     <div class="panel widget-mini">
                         <div class="panel-body">
                             <i class="icon-envelope-open"></i>
-                            <span class="total text-center">1,680</span>
-                            <span class="title text-center">Messages</span>
+                            <span class="total text-center">9</span>
+                            <span class="title text-center">Second Test</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-solid-success widget-mini">
+                        <div class="panel-body">
+                            <i class="icon-bar-chart"></i>
+                            <span class="total text-center">20</span>
+                            <span class="title text-center">Some Other Metric</span>
                         </div>
                     </div>
                 </div>
