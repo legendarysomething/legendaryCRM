@@ -42,7 +42,7 @@
                     @if (session('status'))
                     {{-- Success Message --}}
                         <div class="form-forgotpassword-success visible">
-                            <h3>Reset email has been sent.</h3>
+                            <h3>Success</h3>
                             <p>{{ session('status') }}</p>
                         </div>
                     @endif
