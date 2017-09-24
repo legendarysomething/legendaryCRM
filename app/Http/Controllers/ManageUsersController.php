@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Role;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+
 
 
 class ManageUsersController extends Controller
@@ -88,6 +90,13 @@ class ManageUsersController extends Controller
         //
     }
 
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            "roles" => 'required',
+        ]);
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -97,18 +106,22 @@ class ManageUsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // Sync Roles
+        
+        $validation = $this->validator($request->all())->validate();
+        
         $user = User::findOrFail($id);
 
         
         if (Auth::user()->hasRole('superadministrator') && !$user->hasRole(['superadministrator']))
         {
             // Only Allow Superadmins to manage Admin Roles
+            // Sync Roles
             $user->syncRoles($request->roles);
         }
         elseif(!$user->hasRole(['superadministrator|administrator']))
         {
-            // Do not allow updates on profiles that are superadmins
+            // Do not allow any updates on profiles that are superadmins
+            // Sync Roles
             $user->syncRoles($request->roles);
         }
         else
@@ -116,9 +129,7 @@ class ManageUsersController extends Controller
             // Failure Message here
         }
 
-
         // Return the user to the user management page
-
         $roles = Role::where('name', '!=' , 'superadministrator')->get();
         $role_user = User::findOrFail($id)->roles()->get();
 
