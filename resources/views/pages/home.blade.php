@@ -64,7 +64,6 @@ Dashboard
                     </div>
                 </div>
             </div>
-            <p><button type="button" class="btn btn-success" onclick="showSuccess('Wao')">Show Success Message</button></p>
         </div>
         
         
@@ -79,10 +78,13 @@ Dashboard
 {{-- End Page Content --}}
 
 
+{{-- <p><button type="button" class="btn btn-success" onclick="showSuccess('Wao')">Show Success Message</button></p> --}}
 
 
 {{-- Notifications Js/CSS for testing    --}}
-@section('footer')
+
+
+{{-- @section('footer')
  <!--Page Level JS for Demo-->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
@@ -106,4 +108,4 @@ Dashboard
 <link rel="stylesheet" href="{{asset('plugins/messenger/css/location-sel.css')}}">
 
 
-@endsection
+@endsection --}}
