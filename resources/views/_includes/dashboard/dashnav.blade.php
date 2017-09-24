@@ -151,7 +151,7 @@
                     </li>
                     
 
-                    @role('superadministrator|administrator')
+                 {{--    @role('superadministrator|administrator')
                     <li class="{{ (Request::is('admin/manage') || Request::is('admin/manage/*')) ? 'active' : '' }}">
                         <a href="{{route('admin.manage')}}" title="Manage Users">
                             <i class="fa fa-users"></i> 
@@ -167,6 +167,28 @@
                             @lang('main.test_submissions')
                         </a>
                     </li>
+                    @endrole --}}
+
+                    @role('superadministrator|administrator')
+                    <li class="nav-dropdown {{ Request::is('admin/*') ? 'active open' : '' }}">
+                        <a href="#" title="Admin Panel">
+                            <i class="fa fa-ra"></i> Admin Panel
+                        </a>
+                        <ul class="nav-sub">
+                            <li class="{{ (Request::is('admin/manage') || Request::is('admin/manage/*')) ? 'active' : '' }}">
+                                <a href="{{route('admin.manage')}}" title="Manage Users">
+                                    <i class="fa fa-users"></i> 
+                                    @lang('main.manageusers')
+                                </a>
+                            </li>
+                            <li class="{{ Request::is('admin/test_submissions') ? 'active' : '' }}">
+                                <a href="{{route('admin.test_submissions')}}" title="Manage Submissions">
+                                    <i class="fa fa-clipboard"></i> 
+                                    @lang('main.test_submissions')
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     @endrole
                     
 
@@ -179,25 +201,7 @@
                     </li>
                     @endrole
 
-
-                    {{-- <li class="nav-dropdown">
-                        <a href="#" title="UI Elements">
-                            <i class="fa fa-fw fa-file-text"></i> Pages
-                        </a>
-                        <ul class="nav-sub">
-                            <li>
-                                <a href="pages-blank.html" title="Buttons">
-                                     Blank Page
-                                </a>
-                            </li>
-                            <li>
-                                <a href="pages-another-blank.html" title="Sliders &amp; Progress">
-                                     Another Blank Page
-                                </a>
-                            </li>
-                        </ul>
-                    </li> --}}
-
+                   
 
                 </ul>
             </nav>

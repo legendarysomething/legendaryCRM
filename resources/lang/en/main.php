@@ -7,6 +7,6 @@ return [
     'dashboard' => 'Dashboard',
     'manageusers' => 'Manage Users',
     'translationstest' => 'Translations Test',
-    'test_submissions' => 'Manage Test Submissions',
+    'test_submissions' => 'Test Submissions',
 
 ];

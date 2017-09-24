@@ -28,7 +28,6 @@ class ManageUsersController extends Controller
 
         $users = User::all();
 
-            
 
         return view('pages.admin.manage_users',compact('users')); 
 
@@ -97,7 +96,19 @@ class ManageUsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Sync Roles
+        $user = User::findOrFail($id);
+        $user->syncRoles($request->roles);
+
+
+        // Return the user to the user management page
+
+        $roles = Role::where('name', '!=' , 'superadministrator')->get();
+        $role_user = User::findOrFail($id)->roles()->get();
+
+        return view('pages.admin.manage_single_user',compact('user','roles','role_user'));
+
+
     }
 
     /**

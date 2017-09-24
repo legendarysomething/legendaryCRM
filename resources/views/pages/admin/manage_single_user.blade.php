@@ -116,42 +116,49 @@ Manage Users
                             
                             
                         </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="home1">
-                                
-                                <div class="form-group">
-                                    <div class="row">
+                        <form action="{{route('admin.manage').'/'.$user->id}}" method="POST" >
+                           
+                            <input type="hidden" name="_method" value="PATCH">
+                            {{ csrf_field() }}
 
-                                        <div class="col-sm-3">
-                                            <label class="control-label">Role Management</label>
-                                        </div>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="home1">
+                                    
+                                    <div class="form-group">
+                                        <div class="row">
+
+                                            <div class="col-sm-3">
+                                                <label class="control-label">Role Management</label>
+                                            </div>
 
 
-                                        {{-- Check the checkboxes of roles that user has --}}
-                                        <div class="col-sm-6 pull-right">
-                                            @foreach ($roles as $role)
-                                                <div class="radio">
-                                                @foreach ($role_user as $ru)
-                                                    @if($ru->name == $role->name)
-                                                        <input class="icheck" checked="" type="checkbox" name="check1">
-                                                        <label>{{$role->display_name}}</label>
-                                                        </div>
-                                                         <?php continue 2; ?>
-                                                    @endif
+                                            {{-- Check the checkboxes of roles that user has --}}
+                                            <div class="col-sm-6 pull-right">
+                                                @foreach ($roles as $role)
+                                                    <div class="radio">
+                                                    @foreach ($role_user as $ru)
+                                                        @if($ru->name == $role->name)
+                                                            <input class="icheck" checked="" type="checkbox" name="roles[]" value="{{$role->id}}">
+                                                            <label>{{$role->display_name}}</label>
+                                                            </div>
+                                                             <?php continue 2; ?>
+                                                        @endif
+                                                    @endforeach
+                                                    <input class="icheck" type="checkbox" name="roles[]" value="{{$role->id}}">
+                                                    <label>{{$role->display_name}}</label>
+                                                    </div>
                                                 @endforeach
-                                                <input class="icheck" type="checkbox" name="check1">
-                                                <label>{{$role->display_name}}</label>
-                                                </div>
-                                            @endforeach
+                                            </div>
+
+
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
+
                         </div>
-                    </div>
-                    <button type="submit" class="btn btn-success">Update Roles</button>
+                        <button type="submit" class="btn btn-success">Update Roles</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -248,3 +255,5 @@ Manage Users
 
 
 @endsection
+
+
