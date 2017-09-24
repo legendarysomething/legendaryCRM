@@ -25,12 +25,28 @@
          </div>
          <div class="login-form">
             <div class="login-content">
-               <form method="post" role="form" id="form_forgot_password">
-                  <div class="form-forgotpassword-success">
-                     <i class="entypo-check"></i> 
-                     <h3>Reset email has been sent.</h3>
-                     <p>Please check your email, reset password link will expire in 24 hours.</p>
-                  </div>
+               <form method="POST" action="{{ route('password.email') }}" role="form" id="form_forgot_password">
+                  {{ csrf_field() }}
+
+                  
+                  @if ($errors->any())
+                    {{-- Error Handling --}}
+                        <div class="form-login-error visible"> 
+                            <h3>Password Reset Failed.</h3>
+                            @foreach($errors->all() as $error)
+                                <p>{{ $error }}</p>
+                            @endforeach
+                        </div>
+                    @endif
+
+                    @if (session('status'))
+                    {{-- Success Message --}}
+                        <div class="form-forgotpassword-success visible">
+                            <h3>Reset email has been sent.</h3>
+                            <p>{{ session('status') }}</p>
+                        </div>
+                    @endif
+
                   <div class="form-steps">
                      <div class="step current" id="step-1">
                         <div class="form-group">
@@ -39,9 +55,11 @@
                               <input type="text" class="form-control" name="email" id="email" placeholder="Email" data-mask="email" autocomplete="off" /> 
                            </div>
                         </div>
-                        <div class="form-group"> <button type="submit" class="btn btn-info btn-block btn-login">
-                           Send Me The Email
-                           <i class="fa fa-chevron-right"></i> </button> 
+                        <div class="form-group"> 
+                            <button type="submit" class="btn btn-info btn-block btn-login">
+                            Send Me The Email
+                            <i class="fa fa-chevron-right"></i> 
+                            </button> 
                         </div>
                      </div>
                   </div>

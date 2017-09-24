@@ -1,63 +1,70 @@
-@include('_includes.header')
+@extends('layouts.app')
 
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Reset Password</div>
 
+                <div class="panel-body">
+                    <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
+                        {{ csrf_field() }}
 
-<body class="page-body login-page login-form-fall" data-url="#">
+                        <input type="hidden" name="token" value="{{ $token }}">
 
-      <script type="text/javascript">
-         var baseurl = '#';
-      </script> 
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-      <div class="login-container">
-         <div class="login-header login-caret">
-            <div class="login-content">
-               <a href="../../dashboard/main/index.html" class="logo"> <img src="{{asset('images/logos/logo.png')}}" width="300" alt="" /> </a> 
-               <p class="description">Enter your email, and we will send the reset link.</p>
-               <!-- progress bar indicator --> 
-               <div class="login-progressbar-indicator">
-                  <h3>43%</h3>
-                  <span>logging in...</span> 
-               </div>
-            </div>
-         </div>
-         <div class="login-progressbar">
-            <div></div>
-         </div>
-         <div class="login-form">
-            <div class="login-content">
-               <form method="post" role="form" id="form_forgot_password">
-                  <div class="form-forgotpassword-success">
-                     <i class="entypo-check"></i> 
-                     <h3>Reset email has been sent.</h3>
-                     <p>Please check your email, reset password link will expire in 24 hours.</p>
-                  </div>
-                  <div class="form-steps">
-                     <div class="step current" id="step-1">
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+
+                                @if ($errors->has('password_confirmation'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group">
-                           <div class="input-group">
-                              <div class="input-group-addon"> <i class="fa fa-envelope"></i> </div>
-                              <input type="text" class="form-control" name="email" id="email" placeholder="Email" data-mask="email" autocomplete="off" /> 
-                           </div>
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Reset Password
+                                </button>
+                            </div>
                         </div>
-                        <div class="form-group"> <button type="submit" class="btn btn-info btn-block btn-login">
-                           Send Me The Email
-                           <i class="fa fa-chevron-right"></i> </button> 
-                        </div>
-                     </div>
-                  </div>
-               </form>
-               <div class="login-bottom-links"> 
-               	{{-- TODO: redirection to login page --}}
-               	<a href="{{ route('login') }}" class="link"> 
-               		<i class="fa fa-lock"></i>&nbsp;Return to Login Page
-                </a> 
-                <br /> 
-                    <a href="{{route('register')}}">Register Here!</a> 
-               </div>
+                    </form>
+                </div>
             </div>
-         </div>
-      </div>
-
-
-
-@include('_includes.footer')
+        </div>
+    </div>
+</div>
+@endsection
