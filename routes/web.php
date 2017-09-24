@@ -40,29 +40,17 @@ Route::prefix('admin')->middleware('role:superadministrator|administrator')->gro
 
 
 
-
 // Translations Test Route
 Route::get('translationstest', 'TranslationTestController@index')
 		->name('translationstest')
 		->middleware('role:superadministrator|administrator|applicant');
 
 
+// Bug Report
+Route::get('reportabug', 'ReportBugController@index')->name('reportabug');
 
 
+// Authentication Routes
 Auth::routes();
 
 
-// Authentication Routes... for reference
-// $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-// $this->post('login', 'Auth\LoginController@login');
-// $this->post('logout', 'Auth\LoginController@logout')->name('logout');
-
-// // Registration Routes...
-// $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-// $this->post('register', 'Auth\RegisterController@register');
-
-// // Password Reset Routes...
-// $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
-// $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-// $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
-// $this->post('password/reset', 'Auth\ResetPasswordController@reset');
