@@ -12,7 +12,7 @@
       <div class="login-container">
          <div class="login-header login-caret">
             <div class="login-content">
-               <a href="#" class="logo"> <img src="{{ asset('img/logo.png')}}" width="300" alt="" /> </a> 
+               <a href="{{route('home')}}" class="logo"> <img src="{{ asset('img/logo.png')}}" width="300" alt="" /> </a> 
                <p class="description">Welcome! Kindly log in to access your profile!</p>
                <!-- progress bar indicator --> 
                <div class="login-progressbar-indicator">
