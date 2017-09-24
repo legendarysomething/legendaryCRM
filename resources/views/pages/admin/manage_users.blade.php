@@ -36,16 +36,24 @@ Manage Users
                             <th>ID</th>
                             <th>Nickname</th>
                             <th>Email</th>
+                            <th>Role(s)</th>
                             <th>Manage</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         @foreach ($users as $user)
+                        <?php $out = array() ?>
                         <tr>
                             <td>{{$user->id}}</td>
                             <td>{{$user->username}}</td>
                             <td>{{$user->email}}</td>
+                            <td>
+                            @foreach($user->roles as $role)
+                                <?php array_push($out, ucfirst($role->name)); ?>
+                            @endforeach
+                                {{implode(', ', $out)}}
+                            </td>
                             <td>
                                 <a href="{{route('admin.manage').'/'.$user->id}}" class="btn btn-success" style="color: #fff;">Edit User</a>
                             </td>

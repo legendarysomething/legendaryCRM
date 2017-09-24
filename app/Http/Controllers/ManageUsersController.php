@@ -29,7 +29,7 @@ class ManageUsersController extends Controller
     public function index()
     {
 
-        $users = User::all();
+        $users = User::with('roles')->get();
 
 
         return view('pages.admin.manage_users',compact('users')); 
