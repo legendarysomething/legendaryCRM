@@ -34,7 +34,8 @@ class TranslationTestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+        return view('pages.general.translations_test');
     }
 
     /**

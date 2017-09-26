@@ -39,7 +39,10 @@
                 <div class="panel-body">
                     <form method="POST" action="">
                         {{ csrf_field() }}
-                        <textarea class="textarea form-control" rows="10" cols="80" placeholder="Enter text ..." style="width: 100%; height: 506px"></textarea>
+                        <input type="hidden" name="_method" value="PUT">
+                        <input type="hidden" name="test" value="1">
+
+                        <textarea class="textarea form-control" rows="10" cols="80" name="submission" placeholder="Enter text ..." style="width: 100%; height: 506px"></textarea>
                         <br>
                         <button type="submit" class="btn btn-success">Submit Work</button>
                     </form>

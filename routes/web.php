@@ -45,6 +45,9 @@ Route::get('translationstest', 'TranslationTestController@index')
 		->name('translationstest')
 		->middleware('role:superadministrator|administrator|applicant');
 
+Route::put('translationstest','TranslationTestController@store');
+
+
 
 // Bug Report
 Route::get('reportabug', 'ReportBugController@index')->name('reportabug');
