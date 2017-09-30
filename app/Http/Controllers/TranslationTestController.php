@@ -45,20 +45,14 @@ class TranslationTestController extends Controller
         $input = $request->only(['submission','test_num']);
         $input['submission'] = clean($input['submission']);
 
-
-        // Insert Submission into the database
+        // Store submission into the database
         TestSubmission::create([
             'user_id'   => auth()->id(),
             'body'      => $input['submission'],
             'test_num'  => $input['test_num'],
         ]);
 
-
-        // Store submission into the database
-
-
-        // TODO: notify admins new submission
-
+        // Update Test Status
 
 
 

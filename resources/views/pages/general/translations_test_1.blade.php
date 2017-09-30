@@ -44,7 +44,13 @@
 
                         <textarea class="textarea form-control" rows="10" cols="80" name="submission" placeholder="Enter text ..." style="width: 100%; height: 506px; {{$errors->has('submission') ? 'border-color: #e25d5d;' : ''}}"></textarea>
                         <br>
-                        <button type="submit" class="btn btn-success">Submit Work</button>&nbsp;&nbsp;&nbsp; <span style="color: #e25d5d;">{{$errors->first('submission')}}</span> 
+
+
+                        <button type="submit" class="btn btn-success">Submit Work</button>
+                        &nbsp;&nbsp;&nbsp; 
+                        <span style="color: #e25d5d;">{{$errors->first('submission')}}</span> 
+
+
                     </form>
                 </div>
             </div>

@@ -36,7 +36,7 @@ Translations Test
 {{-- TODO: modularize --}}
 
 {{-- Test 1 Module --}}
-@include('pages.general.translations_test.test1_module')
+@include('pages.general.translations_test_1')
 
 
 
