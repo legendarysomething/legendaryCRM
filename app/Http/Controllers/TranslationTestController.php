@@ -35,6 +35,12 @@ class TranslationTestController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate(request(),[
+            'submission' => 'required',
+        ]);
+
+
         $body = clean($request->submission);
         dd($body);
         return view('pages.general.translations_test');
