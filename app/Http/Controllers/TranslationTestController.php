@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Purifier;
 
+use App\TestSubmission;
+
 class TranslationTestController extends Controller
 {
     /**
@@ -40,9 +42,28 @@ class TranslationTestController extends Controller
             'submission' => 'required',
         ]);
 
+        $input = $request->only(['submission','test_num']);
+        $input['submission'] = clean($input['submission']);
 
-        $body = clean($request->submission);
-        dd($body);
+
+        // Insert Submission into the database
+        TestSubmission::create([
+            'user_id'   => auth()->id(),
+            'body'      => $input['submission'],
+            'test_num'  => $input['test_num'],
+        ]);
+
+
+
+        // Store submission into the database
+
+
+        // TODO: notify admins new submission
+
+
+
+
+
         return view('pages.general.translations_test');
     }
 

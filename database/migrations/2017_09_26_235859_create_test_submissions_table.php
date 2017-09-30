@@ -18,7 +18,7 @@ class CreateTestSubmissionsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->mediumText('body');
             $table->tinyInteger('test_num');
-            $table->tinyInteger('test_grade')->nullable();
+            $table->tinyInteger('test_grade')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')
