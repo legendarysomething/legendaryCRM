@@ -130,13 +130,23 @@
                                 <a href="{{route('admin.test_submissions')}}" title="Manage Submissions">
                                     <i class="fa fa-clipboard"></i> 
                                     @lang('main.test_submissions')
+                                    {{-- <span class="label label-primary label-circle pull-right">8</span> --}}
                                 </a>
                             </li>
                         </ul>
                     </li>
                     @endrole
-                    
 
+                    @role('superadministrator')
+                    <li>
+                        <a href="{{route('home')}}" title="Knowledge Base">
+                            <i class="fa fa-book"></i> 
+                            @lang('main.knowledge_base')
+                        </a>
+                    </li>
+                    @endrole
+
+                    
                     @role('superadministrator|administrator|applicant')
                     <li class="{{ Request::is('translationstest') ? 'active' : '' }}">
                         <a href="{{route('translationstest')}}" title="Translations Test">
@@ -146,6 +156,7 @@
                     </li>
                     @endrole
 
+                    
 
                     <li class=" {{ Request::is('reportabug') ? 'active' : '' }}">
                         <a href="{{route('reportabug')}}" title="Report A Bug">

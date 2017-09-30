@@ -41,7 +41,7 @@ Dashboard
                         <div class="panel-body">
                             <i class="icon-support"></i>
                             <span class="total text-center">5</span>
-                            <span class="title text-center">First Test</span>
+                            <span class="title text-center">First Test Pending</span>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@ Dashboard
                         <div class="panel-body">
                             <i class="icon-envelope-open"></i>
                             <span class="total text-center">9</span>
-                            <span class="title text-center">Second Test</span>
+                            <span class="title text-center">Second Test Pending</span>
                         </div>
                     </div>
                 </div>

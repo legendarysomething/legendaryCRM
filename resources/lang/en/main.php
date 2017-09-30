@@ -8,6 +8,7 @@ return [
     'manageusers' => 'Manage Users',
     'translationstest' => 'Translations Test',
     'test_submissions' => 'Test Submissions',
+    'knowledge_base' => 'Knowledge Base',
     'reportabug' => 'Report A Bug',
 
 ];
