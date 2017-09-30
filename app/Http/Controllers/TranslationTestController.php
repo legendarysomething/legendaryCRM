@@ -57,7 +57,7 @@ class TranslationTestController extends Controller
 
 
 
-        return view('pages.general.translations_test');
+        return redirect()->route('translationstest');
     }
 
     /**

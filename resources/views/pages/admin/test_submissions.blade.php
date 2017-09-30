@@ -1,40 +1,85 @@
 
 @extends('_includes.dashboard.dashnav')
 
+
 {{-- Page Header --}}
 @section('pageheader')
-Test Submissions
+Manage Users
 @endsection
-{{-- End Page Header --}}
 
 
-{{--  Page Content --}}
+
+
 @section('content')
 
-
 <div class="pageheader">
-    <h1>Test Submissions</h1>
+    <h1>Manage Users</h1>
     <div class="breadcrumb-wrapper hidden-xs">
         <span class="label">You are here:</span>
         <ol class="breadcrumb">
-            <li>Admin</li>
-            <li class="active">Test Submissions</li>
+            <li class="active">Admin</li>
+            <li class="active">Manage Users</li>
         </ol>
     </div>
 </div>
-<section id="main-content">
-    <div class="row">
-        <div class="col-md-12 col-lg-12">
-			<div class="panel panel-default">
-    			<div class="panel-body ng-binding">
-    				Welcome to the Home Page.
-   				 </div>
-			</div>
-		</div>
+<section id="main-content ">
+    <br>
+    <div class="col-md-12">
+        <div class="panel panel-default animated fadeInUp">
+            <div class="panel-heading">
+                <h3 class="panel-title">New Submissions</h3>
+            </div>
+            <div class="panel-body table-responsive">
+                <table id="user-management" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nickname</th>
+                            <th>Email</th>
+                            <th>Role(s)</th>
+                            <th>Manage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
     </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
 
+@endsection
+
+
+
+
+
+@section('footer')
+<!--Page Leve JS -->
+<script src="{{asset('plugins/dataTables/js/jquery.dataTables.js')}}"></script>
+<script src="{{asset('plugins/dataTables/js/dataTables.bootstrap.js')}}"></script>
+<script>
+$(document).ready(function() {
+    // $('#user-management').dataTable();
+});
+
+</script>
 
 @endsection
-{{-- End Page Content --}}
