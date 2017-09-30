@@ -16,6 +16,8 @@ class TestSubmission extends Model
 
     public function users() // $TestSubmission->user->name
     {
-    	return $this->belongsTo(User::class,'id');
+    	return $this->belongsTo(User::class,'user_id');
     }
+
+
 }
