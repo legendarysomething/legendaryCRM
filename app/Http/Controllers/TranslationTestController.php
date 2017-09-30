@@ -54,7 +54,6 @@ class TranslationTestController extends Controller
         ]);
 
 
-
         // Store submission into the database
 
 
