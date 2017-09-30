@@ -4,7 +4,7 @@
 
 {{-- Page Header --}}
 @section('pageheader')
-Manage Users
+Manage Submissions
 @endsection
 
 
@@ -13,51 +13,25 @@ Manage Users
 @section('content')
 
 <div class="pageheader">
-    <h1>Manage Users</h1>
+    <h1>Manage Submissions</h1>
     <div class="breadcrumb-wrapper hidden-xs">
         <span class="label">You are here:</span>
         <ol class="breadcrumb">
             <li class="active">Admin</li>
-            <li class="active">Manage Users</li>
+            <li class="active">Manage Submissions</li>
         </ol>
     </div>
 </div>
 <section id="main-content ">
-    <br>
-    <div class="col-md-12">
-        <div class="panel panel-default animated fadeInUp">
-            <div class="panel-heading">
-                <h3 class="panel-title">New Submissions</h3>
-            </div>
-            <div class="panel-body table-responsive">
-                <table id="user-management" class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nickname</th>
-                            <th>Email</th>
-                            <th>Role(s)</th>
-                            <th>Manage</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>dummy dta</td>
-                            <td>dummy dta</td>
-                            <td>dummy dta</td>
-                            <td>dummy dta</td>
-                            <td>dummy dta</td>
-                        </tr>
-                        
+<br>
+<div class="container-fluid">
+    <div class="row">
+        
 
-                    </tbody>
-                </table>
-            </div>
 
-        </div>
+
     </div>
 </div>
-
 
 
 

@@ -136,7 +136,8 @@
                         </ul>
                     </li>
                     @endrole
-
+                    
+                    {{-- Beta --}}
                     @role('superadministrator')
                     <li>
                         <a href="{{route('home')}}" title="Knowledge Base">

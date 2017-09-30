@@ -46,7 +46,7 @@
                         <br>
 
 
-                        <button type="submit" class="btn btn-success">Submit Work</button>
+                        <button type="submit" id="submit_work" class="btn btn-success">Submit Work</button>
                         &nbsp;&nbsp;&nbsp; 
                         <span style="color: #e25d5d;">{{$errors->first('submission')}}</span> 
 
