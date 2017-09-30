@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Purifier;
 
 class TranslationTestController extends Controller
 {
@@ -34,7 +35,8 @@ class TranslationTestController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $body = clean($request->submission);
+        dd($body);
         return view('pages.general.translations_test');
     }
 
