@@ -105,6 +105,7 @@ Manage Users
 
         <div class="col-md-6">
             <div class="panel panel-default animated fadeInUp">
+            @if(!in_array("superadministrator", $user->roles->pluck('name')->toArray()))
                 <div class="panel-heading">
                     <h3 class="panel-title">User Management Section</h3>
                 </div>
@@ -165,6 +166,16 @@ Manage Users
                         @endif
                     </form>
                 </div>
+
+                @else
+                {{-- Superadmin Section if wanted--}}
+                {{-- <div class="panel-heading">
+                    <h3 class="panel-title">User Management Section</h3>
+                </div>
+                <div class="panel-body">
+                </div> --}}
+                @endif
+
             </div>
         </div>
 
