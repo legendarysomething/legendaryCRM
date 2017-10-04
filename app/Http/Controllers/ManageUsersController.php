@@ -108,34 +108,32 @@ class ManageUsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request,$id);
+        // Validate inputs
         $validation = $this->validator($request->all())->validate();
-        
         $user = User::findOrFail($id);
 
-        
+        $errors = array();
+
+        // Only SU can modify admins, no SU's can be modified
         if (Auth::user()->hasRole('superadministrator') && !$user->hasRole(['superadministrator']))
         {
-            // Only Allow Superadmins to manage Admin Roles
-            // Sync Roles
             $user->syncRoles($request->roles);
         }
         elseif(!$user->hasRole(['superadministrator|administrator']))
         {
-            // Do not allow any updates on profiles that are superadmins
-            // Sync Roles
             $user->syncRoles($request->roles);
         }
         else
         {
-            // Failure Message here
+            $errors['permissions'] = 'You are not allowed to manage this account';
         }
+
 
         // Return the user to the user management page
         $roles = Role::where('name', '!=' , 'superadministrator')->get();
         $role_user = User::findOrFail($id)->roles()->get();
 
-        return view('pages.admin.manage_single_user',compact('user','roles','role_user'));
+        return view('pages.admin.manage_single_user',compact('user','roles','role_user'))->witherrors($errors);
 
 
     }
