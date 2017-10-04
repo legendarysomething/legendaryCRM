@@ -108,6 +108,9 @@ class ManageUsersController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        // $request->has('<name of button>');
+
         // Validate inputs
         $validation = $this->validator($request->all())->validate();
         $user = User::findOrFail($id);

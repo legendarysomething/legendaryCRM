@@ -158,7 +158,8 @@ Manage Users
                             </div>
 
                         </div>
-                        <button type="submit" class="btn btn-success">Update Roles</button>&nbsp;&nbsp;&nbsp;
+                        <button type="submit" onsubmit="confirm('are you sure?');" class="btn btn-success">Update Roles</button>&nbsp;&nbsp;&nbsp;
+
                         @if ($errors->any())
                         @foreach($errors->all() as $error)
                             <span style="color: #e25d5d">{{$error}}</span>
@@ -220,22 +221,7 @@ Manage Users
                                 <span class="small">Jan</span>
                             </div>
                             <h4>Vacation photos</h4>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <img src="assets/img/vac-1.jpg" alt="" />
-                                </div>
-                                <div class="col-md-6">
-                                    <img src="assets/img/vac-2.jpg" alt="" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <img src="assets/img/vac-3.jpg" alt="" />
-                                </div>
-                                <div class="col-md-6">
-                                    <img src="assets/img/vac-4.jpg" alt="" />
-                                </div>
-                            </div>
+                            
 
                         </li>
                         <li>
@@ -271,5 +257,7 @@ Manage Users
 
 
 @endsection
+
+
 
 
