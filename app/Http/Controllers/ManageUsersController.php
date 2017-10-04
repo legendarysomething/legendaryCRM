@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -94,6 +95,7 @@ class ManageUsersController extends Controller
     {
         return Validator::make($data, [
             "roles" => 'required',
+            "roles.*" => Rule::in(Role::where('name','!=','superadministrator')->pluck('id')->toArray()),
         ]);
     }
 
@@ -106,7 +108,7 @@ class ManageUsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        // dd($request,$id);
         $validation = $this->validator($request->all())->validate();
         
         $user = User::findOrFail($id);

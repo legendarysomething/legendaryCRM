@@ -130,16 +130,7 @@ Manage Users
                                             <div class="col-sm-3">
                                                 <label class="control-label">Role Management</label>
                                             </div>
-                                            @if ($errors->any())
-                    {{-- Error Handling --}}
-                        <div class="form-login-error visible"> 
-                            <h3>Registration Failed.</h3>
-                            @foreach($errors->all() as $error)
-                                <p>{{ $error }}</p>
-                            @endforeach
-                        </div>
-                    @endif
-
+                                            
 
                                             {{-- Check the checkboxes of roles that user has --}}
                                             <div class="col-sm-6 pull-right">
@@ -166,7 +157,12 @@ Manage Users
                             </div>
 
                         </div>
-                        <button type="submit" class="btn btn-success">Update Roles</button>
+                        <button type="submit" class="btn btn-success">Update Roles</button>&nbsp;&nbsp;&nbsp;
+                        @if ($errors->any())
+                        @foreach($errors->all() as $error)
+                            <span style="color: #e25d5d">{{$error}}</span>
+                        @endforeach
+                        @endif
                     </form>
                 </div>
             </div>
