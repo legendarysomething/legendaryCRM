@@ -7,11 +7,16 @@
 Manage Users
 @endsection
 
+{{-- CSS includes--}}
+@section('header')
+<!--Inputs CSS-->
+<link rel="stylesheet" href="{{asset('plugins/icheck/css/all.css')}}">
+@endsection
 
 
 
+{{-- Content Start --}}
 @section('content')
-
 
 <div class="pageheader">
 
@@ -259,5 +264,13 @@ Manage Users
 @endsection
 
 
+@section('footer')
+<script src="{{asset('plugins/icheck/js/icheck.min.js')}}"></script>
 
+<script>
+$(document).ready(function() {
+    app.customCheckbox();
+});
+</script>
+@endsection
 
