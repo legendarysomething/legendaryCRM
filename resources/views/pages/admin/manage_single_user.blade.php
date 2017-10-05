@@ -164,12 +164,12 @@ Manage Users
 
                         </div>
                         <button type="submit" onsubmit="confirm('are you sure?');" class="btn btn-success">Update Roles</button>&nbsp;&nbsp;&nbsp;
-
                         @if ($errors->any())
                         @foreach($errors->all() as $error)
-                            <span style="color: #e25d5d">{{$error}}</span>
+                            <label class="error">{{$error}}</label>
                         @endforeach
                         @endif
+
                     </form>
                 </div>
 
