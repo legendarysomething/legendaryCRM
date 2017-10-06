@@ -138,7 +138,7 @@
                     @endrole
                     
                     {{-- Beta --}}
-                    @role('superadministrator')
+                   {{--  @role('superadministrator')
                     <li>
                         <a href="{{route('home')}}" title="Knowledge Base">
                             <i class="fa fa-book"></i> 
@@ -146,7 +146,7 @@
                         </a>
                     </li>
                     @endrole
-
+ --}}
                     
                     @role('superadministrator|administrator|applicant')
                     <li class="{{ Request::is('translationstest') ? 'active' : '' }}">
