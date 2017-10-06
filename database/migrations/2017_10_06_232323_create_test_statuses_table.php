@@ -16,8 +16,8 @@ class CreateTestStatusesTable extends Migration
         Schema::create('test_statuses', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('test_stage');
-            $table->unsignedInteger('status');
+            $table->unsignedInteger('test_stage')->default(1);
+            $table->unsignedInteger('status')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')

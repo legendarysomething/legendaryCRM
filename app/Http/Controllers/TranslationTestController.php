@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Purifier;
+use Illuminate\Support\Facades\Auth;
 
 use App\TestSubmission;
+use App\TestStatus;
 
 class TranslationTestController extends Controller
 {
@@ -16,6 +18,12 @@ class TranslationTestController extends Controller
      */
     public function index()
     {
+        // Creates a test status row if one doesn't already exist
+        $test_status = TestStatus::firstOrCreate([
+            'user_id' => Auth::user()->id
+        ]);
+
+
         return view('pages.general.translations_test');
     }
 
