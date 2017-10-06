@@ -11,7 +11,7 @@ class TestSubmission extends Model
 
     public function comments()
     {
-    	return $this->hasMany(TestComments::class);
+    	return $this->hasMany(Comments::class);
     }
 
     public function users() // $TestSubmission->user->name
