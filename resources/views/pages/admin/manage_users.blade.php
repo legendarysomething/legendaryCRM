@@ -30,14 +30,14 @@ Manage Users
                 <h3 class="panel-title">Active Members</h3>
             </div>
             <div class="panel-body table-responsive">
-                <table id="user-management" class="table table-striped">
+                <table id="user-management" class="table table-hover table-striped">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Nickname</th>
                             <th>Email</th>
                             <th>Role(s)</th>
-                            <th>Manage</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,20 +45,22 @@ Manage Users
                         @foreach ($users as $user)
                         <?php $out = array() ?>
                         <tr>
-                            <td>{{$user->id}}</td>
-                            <td>{{$user->username}}</td>
-                            <td>{{$user->email}}</td>
+                            <td><a href="{{route('admin.manage').'/'.$user->id}}">{{$user->id}}</a></td>
+                            <td><a href="{{route('admin.manage').'/'.$user->id}}">{{$user->username}}</a></td>
+                            <td><a href="{{route('admin.manage').'/'.$user->id}}">{{$user->email}}</a></td>
                             
                             {{-- Roles --}}
                             <td>
-                            @foreach($user->roles as $role)
-                                <?php array_push($out, ucfirst($role->name)); ?>
-                            @endforeach
-                                {{implode(', ', $out)}}
+                                <a href="{{route('admin.manage').'/'.$user->id}}">
+                                    @foreach($user->roles as $role)
+                                        <?php array_push($out, ucfirst($role->name)); ?>
+                                    @endforeach
+                                        {{implode(', ', $out)}}
+                                </a>
                             </td>
                             {{-- Manage User Button --}}
                             <td>
-                                <a href="{{route('admin.manage').'/'.$user->id}}" class="btn btn-success" style="color: #fff;">Edit User</a>
+                                <a href="{{route('admin.manage').'/'.$user->id}}" class="btn btn-success btn-block" style="color: #fff;">Edit User</a>
                             </td>
                         </tr>
                         @endforeach
