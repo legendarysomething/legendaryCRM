@@ -8,7 +8,7 @@ use App\Role;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\Redirect;
 
 
 class ManageUsersController extends Controller
@@ -118,26 +118,15 @@ class ManageUsersController extends Controller
         $errors = array();
 
         // Only SU can modify admins, no SU's can be modified
-        if (Auth::user()->hasRole('superadministrator') && !$user->hasRole(['superadministrator']))
-        {
+        if (Auth::user()->hasRole('superadministrator') && !$user->hasRole(['superadministrator'])) {
             $user->syncRoles($request->roles);
-        }
-        elseif(!$user->hasRole(['superadministrator|administrator']))
-        {
+        } elseif(!$user->hasRole(['superadministrator|administrator'])) {
             $user->syncRoles($request->roles);
-        }
-        else
-        {
+        } else {
             $errors['permissions'] = 'You are not allowed to manage this account';
         }
 
-
-        // Return the user to the user management page
-        $roles = Role::where('name', '!=' , 'superadministrator')->get();
-        $role_user = User::findOrFail($id)->roles()->get();
-
-        return view('pages.admin.manage_single_user',compact('user','roles','role_user'))->witherrors($errors);
-
+        return Redirect::back()->witherrors($errors);
 
     }
 

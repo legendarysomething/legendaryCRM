@@ -32,16 +32,15 @@ Manage Users
 </div>
 <section id="main-content">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-lg-5">
             <section class="panel animated fadeInUp">
                 <div class="panel-body profile-wrapper">
-                    <div class="col-md-3">
+                    <div class="col-md-12">
                         <div class="profile-pic text-center">
-                            <img src="{{asset('img/profile.jpg')}}" alt="" class="img-circle">
+                            <img src="{{asset('img/profile.jpg')}}" alt="" class="img-circle" style="max-width: 200px;">
                         </div>
-                    </div>
-                    <div class="col-md-8 col-md-offset-1">
-                        <div class="profile-info">
+                        <br>
+                        <div class="profile-info text-center">
                             <h1>
                                 {{$user->username}}
                                 @foreach ($role_user as $ru)
@@ -51,32 +50,32 @@ Manage Users
                                 @endforeach
                             </h1>
 
-                            <span class="text-muted">UI Designer</span>
-                            <br><br>
+                            <span class="text-muted">Software Dev</span>
+                            <br><hr>
                             <address>
-                                <strong>Full Name</strong>
-                                <br>
-                                {{$user->name}}
+                                <span class="pull-left"><strong>Full Name</strong></span>
+                                <span class="pull-right">{{$user->name}}</span>
+                            </address>
+                            <br><hr>
+                            <address>
+                                <span class="pull-left"><strong>Email</strong></span>
+                                <span class="pull-right">{{$user->email}}</span>
+                            <br><hr>
                             </address>
                             <address>
-                                <strong>Email</strong>
-                                <br>
-                                {{$user->email}}
+                                <span class="pull-left"><strong>Phone Number</strong></span>
+                                <span class="pull-right">{{$user->phonenumber}}</span>
+                            <br><hr>
                             </address>
                             <address>
-                                <strong>Phone Number</strong>
-                                <br>
-                                {{$user->phonenumber}}
-                            </address>
-                            <address>
-                                <strong>Member Since</strong>
-                                <br>
-                                {{$user->created_at->toFormattedDateString()}}
+                                <span class="pull-left"><strong>Member Since</strong></span>
+                                <span class="pull-right">{{$user->created_at->toFormattedDateString()}}</span>
+                            <br><hr>
                             </address>
 
                             
                             
-                            {{-- <div class="connect">
+                           {{--  <div class="connect">
                                 <button type="button" class="btn btn-success btn-trans"><span class="fa fa-check"></span> Following</button>
                                 <button type="button" class="btn btn-primary btn-trans"><span class="fa fa-comments"></span> Chat</button>
                             </div> --}}
@@ -85,7 +84,7 @@ Manage Users
                     </div>
                 </div>
                 <br>
-                <section class="panel timeline-post-to">
+                {{-- <section class="panel timeline-post-to">
                     <div class="panel-body">
                         <form role="form">
                             <h3>Leave a comment</h3>
@@ -93,10 +92,10 @@ Manage Users
                             <textarea class="form-control" placeholder="Add a comment"></textarea>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    {{-- <a class="btn btn-sm btn-default"><i class="fa fa-camera"></i></a>
+                                    <a class="btn btn-sm btn-default"><i class="fa fa-camera"></i></a>
                                     <a class="btn btn-sm btn-default"><i class="fa fa-video-camera"></i></a>
                                     <a class="btn btn-sm btn-default"><i class="fa fa-music"></i></a>
-                                    <a class="btn btn-sm btn-default"><i class="fa fa-map-marker"></i></a> --}}
+                                    <a class="btn btn-sm btn-default"><i class="fa fa-map-marker"></i></a>
                                 </div>
                                 <div class="col-sm-6 text-right">
                                     <button type="submit" class="btn btn-success">Post</button>
@@ -104,13 +103,13 @@ Manage Users
                             </div>
                         </form>
                     </div>
-                </section>
+                </section> --}}
             </section>
         </div>
 
         <div class="col-md-6">
             <div class="panel panel-default animated fadeInUp">
-            @if(!in_array("superadministrator", $user->roles->pluck('name')->toArray()))
+            {{-- @if(!in_array("superadministrator", $user->roles->pluck('name')->toArray())) --}}
                 <div class="panel-heading">
                     <h3 class="panel-title">User Management Section</h3>
                 </div>
@@ -173,14 +172,14 @@ Manage Users
                     </form>
                 </div>
 
-                @else
+                {{-- @else --}}
                 {{-- Superadmin Section if wanted--}}
                 {{-- <div class="panel-heading">
                     <h3 class="panel-title">User Management Section</h3>
                 </div>
                 <div class="panel-body">
                 </div> --}}
-                @endif
+                {{-- @endif --}}
 
             </div>
         </div>
@@ -188,75 +187,6 @@ Manage Users
 
     </div>
 
-
-    {{-- Comments Section --}}
-    <div class="row">
-        <div class="col-md-12">
-            <section class="panel  timeline-post animated fadeInUp">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Comments</h3>
-                </div>
-                <div class="panel-body">
-                    <ul>
-                        <li>
-                            <div class="date">
-                                <span>23</span>
-                                <span class="small">Feb</span>
-                            </div>
-                            <h4>Lorem ipsum dolor sit</h4>
-                            <p>
-                                Tortor metus suscipit lectus lacinia mi. Duis quis ullamcorper, felis consequat ut felis sit, pellentesque sit nunc, porttitor a, neque enim metus sed dictum scelerisque. Ante ornare, ante nunc ac, et feugiat justo urna, pharetra velit convallis, sit magna odio in nunc sit.
-                            </p>
-                        </li>
-                        
-                        <li>
-                            <div class="date">
-                                <span>12</span>
-                                <span class="small">Jan</span>
-                            </div>
-                            <h4>Lorem ipsum dolor!</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                            </p>
-
-                        </li>
-                        <li>
-                            <div class="date">
-                                <span>01</span>
-                                <span class="small">Jan</span>
-                            </div>
-                            <h4>Vacation photos</h4>
-                            
-
-                        </li>
-                        <li>
-                            <div class="date">
-                                <span>23</span>
-                                <span class="small">Dec</span>
-                            </div>
-                            <h4>Lorem ipsum dolor!</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                            </p>
-                        </li>
-                        <li>
-                            <div class="date">
-                                <span>14</span>
-                                <span class="small">Dec</span>
-                            </div>
-                            <h4>Lorem ipsum dolor!</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                            </p>
-                        </li>
-                    </ul>
-
-                </div>
-            </section>
-
-        </div>
-
-    </div>
 
 
 
@@ -270,6 +200,9 @@ Manage Users
 <script>
 $(document).ready(function() {
     app.customCheckbox();
+    $('input').iCheck({
+        checkboxClass: 'icheckbox_flat-green',
+    });
 });
 </script>
 @endsection
