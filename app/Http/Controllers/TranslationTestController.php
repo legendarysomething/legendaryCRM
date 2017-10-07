@@ -24,7 +24,7 @@ class TranslationTestController extends Controller
         ]);
 
 
-        return view('pages.general.translations_test');
+        return view('pages.translations_test.translations_test',compact('test_status'));
     }
 
     /**
@@ -61,9 +61,8 @@ class TranslationTestController extends Controller
         ]);
 
         // Update Test Status
-
-
-
+        TestStatus::where('user_id', Auth::user()->id)
+            ->update(['status' => 1]);
 
         return redirect()->route('translationstest');
     }

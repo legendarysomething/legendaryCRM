@@ -33,11 +33,12 @@ Translations Test
 
 
 
-{{-- TODO: modularize --}}
-
-{{-- Test 1 Module --}}
-@include('pages.general.translations_test_1')
-
+{{-- Display Based on Stage & Progress --}}
+@if($test_status->status == 1)
+	@include('pages.translations_test.translations_test_submitted')
+@else
+	@include('pages.translations_test.translations_test_'.$test_status->test_stage)
+@endif
 
 
 

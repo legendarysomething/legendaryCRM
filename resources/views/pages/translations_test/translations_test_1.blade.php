@@ -47,9 +47,10 @@
 
 
                         <button type="submit" id="submit_work" class="btn btn-success">Submit Work</button>
-                        &nbsp;&nbsp;&nbsp; 
-                        <span style="color: #e25d5d;">{{$errors->first('submission')}}</span> 
-
+                        &nbsp;&nbsp;&nbsp;
+                        @if ($errors->any()) 
+                        <span><label class="error">{{$errors->first('submission')}}</label></span> 
+                        @endif
 
                     </form>
                 </div>
