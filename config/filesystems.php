@@ -26,7 +26,8 @@ return [
     |
     */
 
-    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
+    // 'cloud' => env('FILESYSTEM_CLOUD', 's3'),
+    'cloud' => 'google', //added by sam 8th October 2017 -> sets gdrive as default cloud storage
 
     /*
     |--------------------------------------------------------------------------
@@ -61,6 +62,14 @@ return [
             'secret' => env('AWS_SECRET'),
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
+        ],
+
+        'google' => [
+            'driver' => 'google',
+            'clientId' => env('GOOGLE_DRIVE_CLIENT_ID'),
+            'clientSecret' => env('GOOGLE_DRIVE_CLIENT_SECRET'),
+            'refreshToken' => env('GOOGLE_DRIVE_REFRESH_TOKEN'),
+            'folderId' => env('GOOGLE_DRIVE_FOLDER_ID'),
         ],
 
     ],
