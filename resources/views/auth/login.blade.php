@@ -42,13 +42,13 @@
                     <div class="form-group">
                      <div class="input-group">
                         <div class="input-group-addon"> <i class="fa fa-user"></i> </div>
-                            <input type="text" class="form-control" name="email" id="email" placeholder="E-Mail" autocomplete="off" value=""/> 
+                            <input type="text" class="form-control" name="email" id="email" placeholder="E-Mail" autocomplete="off" value="superadministrator@app.com"/> 
                      </div>
                   </div>
                   <div class="form-group">
                      <div class="input-group">
                         <div class="input-group-addon"> <i class="fa fa-key"></i> </div>
-                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" autocomplete="off" value=""/>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" autocomplete="off" value="password"/>
                      </div>
                   </div>
                   <div class="form-group"> <button type="submit" class="btn btn-primary btn-block btn-login"> <i class="fa fa-sign-in"></i>
