@@ -57,5 +57,5 @@ Route::get('reportabug', 'ReportBugController@index')->name('reportabug');
 Auth::routes();
 
 Route::get('test', function() {
-    Storage::disk('fuckyou')->put('test.txt', 'Hello World');
+    Storage::disk('google')->put('test.txt', 'Hello World');
 });
