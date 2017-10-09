@@ -107,7 +107,7 @@ Manage Users
             </section>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-7">
             <div class="panel panel-default animated fadeInUp">
             {{-- @if(!in_array("superadministrator", $user->roles->pluck('name')->toArray())) --}}
                 <div class="panel-heading">
