@@ -34,7 +34,9 @@ class ReportBugController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+
+        return redirect()->route('reportabug');
     }
 
     /**

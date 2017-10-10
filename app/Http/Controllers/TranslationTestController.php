@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Purifier;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 use App\TestSubmission;
 use App\TestStatus;
@@ -55,6 +56,7 @@ class TranslationTestController extends Controller
         $input = $request->only(['submission','test_num']);
         $input['submission'] = clean($input['submission']);
 
+
         // Store submission into the database
         TestSubmission::create([
             'user_id'   => auth()->id(),
@@ -66,7 +68,11 @@ class TranslationTestController extends Controller
         TestStatus::where('user_id', Auth::user()->id)
             ->update(['status' => 1]);
 
-        // TODO: Send Submission to Google Drive
+        // Send Submission to Google Drive
+        // $filename = "Translation Test";          
+        // $this->store_to_gdrive($filename,$input['submission']);
+
+
 
         return redirect()->route('translationstest');
     }
@@ -115,4 +121,36 @@ class TranslationTestController extends Controller
     {
         //
     }
+
+
+    /**
+     * Stores the submission in gdrive in a folder named after the user
+     *
+     */
+    private function store_to_gdrive($filename,$submission)
+    {
+
+        $folder = Auth::user()->name;
+        // Get root directory contents...
+        $contents = collect(Storage::cloud()->listContents('/', false)); 
+        // Find the folder
+        $dir = $contents->where('type', '=', 'dir')
+            ->where('filename', '=', $folder)
+            ->first();
+        // If no directory is found, make one and select it
+        if (!$dir) {
+            Storage::cloud()->makeDirectory($folder);
+            $contents = collect(Storage::cloud()->listContents('/', false)); 
+            $dir = $contents->where('type', '=', 'dir')
+                ->where('filename', '=', $folder)
+                ->first();
+        }
+
+        Storage::cloud()->put($dir['path'].'/'.$filename, $submission);
+    }
+
+
+
+
+
 }

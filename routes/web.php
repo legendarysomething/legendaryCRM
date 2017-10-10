@@ -51,7 +51,7 @@ Route::put('translationstest','TranslationTestController@store');
 
 // Bug Report
 Route::get('reportabug', 'ReportBugController@index')->name('reportabug');
-
+Route::put('reportabug','ReportBugController@store');
 
 // Authentication Routes
 Auth::routes();
