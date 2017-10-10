@@ -23,6 +23,10 @@ class TranslationTestController extends Controller
             'user_id' => Auth::user()->id
         ]);
 
+        // To fix the bug where page wont show when a user views it for the first time
+        if($test_status->wasRecentlyCreated){
+            $test_status = TestStatus::where('user_id',Auth::user()->id)->first();
+        }
 
         return view('pages.translations_test.translations_test',compact('test_status'));
     }
