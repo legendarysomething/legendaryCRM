@@ -4,7 +4,7 @@ return [
 
 	// Dashboard Navigations Bar
 	'navigation' => 'Navigation',
-    'dashboard' => 'Dashboard',
+    'home' => 'Home',
     'manageusers' => 'Manage Users',
     'translationstest' => 'Translations Test',
     'test_submissions' => 'Test Submissions',

@@ -50,9 +50,7 @@ class TranslationTestController extends Controller
     public function store(Request $request)
     {
 
-        $this->validate(request(),[
-            'submission' => 'required',
-        ]);
+        $this->validate(request(),['submission' => 'required']);
 
         $input = $request->only(['submission','test_num']);
         $input['submission'] = clean($input['submission']);
@@ -67,6 +65,8 @@ class TranslationTestController extends Controller
         // Update Test Status
         TestStatus::where('user_id', Auth::user()->id)
             ->update(['status' => 1]);
+
+        // TODO: Send Submission to Google Drive
 
         return redirect()->route('translationstest');
     }

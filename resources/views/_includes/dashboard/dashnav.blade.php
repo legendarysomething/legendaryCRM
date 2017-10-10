@@ -107,9 +107,9 @@
                 <ul class="nav nav-pills nav-stacked">
 
                     <li class=" {{ Request::is('home') ? 'active' : '' }}">
-                        <a href="{{route('home')}}" title="Dashboard">
-                            <i class="fa  fa-fw fa-tachometer"></i> 
-                            @lang('main.dashboard')
+                        <a href="{{route('home')}}" title="Home">
+                            <i class="fa  fa-fw fa-home"></i> 
+                            @lang('main.home')
                         </a>
                     </li>
                     

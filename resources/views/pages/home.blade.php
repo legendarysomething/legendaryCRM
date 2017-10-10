@@ -3,7 +3,7 @@
 
 {{-- Page Header --}}
 @section('pageheader')
-Dashboard
+@lang('main.home')
 @endsection
 {{-- End Page Header --}}
 
@@ -13,11 +13,11 @@ Dashboard
 
 
 <div class="pageheader">
-    <h1>Dashboard</h1>
+    <h1>@lang('main.home')</h1>
     <div class="breadcrumb-wrapper hidden-xs">
         <span class="label">You are here:</span>
         <ol class="breadcrumb">
-            <li class="active">Dashboard</li>
+            <li class="active">@lang('main.home')</li>
         </ol>
     </div>
 </div>
