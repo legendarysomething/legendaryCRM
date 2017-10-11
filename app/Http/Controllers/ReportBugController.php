@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Mail;
+
 class ReportBugController extends Controller
 {
     /**
@@ -35,7 +37,7 @@ class ReportBugController extends Controller
     public function store(Request $request)
     {
         
-
+        Mail::to('samkhoo77@gmail.com')->send(new \App\Mail\ReportABug());
         return redirect()->route('reportabug');
     }
 

@@ -28,6 +28,6 @@ class ReportABug extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.bugs.report');
+        return $this->markdown('emails.bug.report');
     }
 }
