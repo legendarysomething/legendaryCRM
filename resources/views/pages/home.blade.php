@@ -23,7 +23,7 @@
 </div>
 
 
-<section id="main-content" class="animated fadeInUp">
+<section id="main-content" class="animated fadeInUp max-1500">
     <div class="row">
         <div class="col-md-12">
             <div class="row">

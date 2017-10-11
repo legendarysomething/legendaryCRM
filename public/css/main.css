@@ -4373,3 +4373,7 @@ div.config h4 a:hover {
 r {
   cursor: pointer;
 }
+
+.max-1500{
+    max-width: 1500px;
+    margin : 0 auto;
