@@ -33,7 +33,7 @@
 
 
 
-<section id="main-content">
+<section id="main-content" class="max-1500">
     <div class="row">       
         <div class="col-md-6">
 

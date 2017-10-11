@@ -32,14 +32,14 @@ Translations Test
 </div>
 
 
-
-{{-- Display Based on Stage & Progress --}}
-@if($test_status->status == 1)
-	@include('pages.translations_test.translations_test_submitted')
-@else
-	@include('pages.translations_test.translations_test_'.$test_status->test_stage)
-@endif
-
+<section id="main-content" class="max-1500">
+    {{-- Display Based on Stage & Progress --}}
+    @if($test_status->status == 1)
+    	@include('pages.translations_test.translations_test_submitted')
+    @else
+    	@include('pages.translations_test.translations_test_'.$test_status->test_stage)
+    @endif
+</section>
 
 
 
