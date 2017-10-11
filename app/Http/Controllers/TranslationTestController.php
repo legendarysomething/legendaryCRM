@@ -72,8 +72,6 @@ class TranslationTestController extends Controller
         // $filename = "Translation Test";          
         // $this->store_to_gdrive($filename,$input['submission']);
 
-
-
         return redirect()->route('translationstest');
     }
 
