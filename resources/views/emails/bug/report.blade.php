@@ -1,12 +1,11 @@
 @component('mail::message')
-# Introduction
 
-The body of your message.
+Bug Report Made By: {{$user->name}}
+<br><br>
 
-@component('mail::button', ['url' => ''])
-Button Text
-@endcomponent
+{!!$message!!}
 
-Thanks,<br>
+
+Regrads,<br>
 {{ config('app.name') }}
 @endcomponent

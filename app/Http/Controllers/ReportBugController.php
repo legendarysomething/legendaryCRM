@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ReportABug;
+
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class ReportBugController extends Controller
@@ -36,8 +39,15 @@ class ReportBugController extends Controller
      */
     public function store(Request $request)
     {
-        
-        Mail::to('samkhoo77@gmail.com')->send(new \App\Mail\ReportABug());
+        // Validate and sanitize data
+        $this->validate(request(),['submission' => 'required']);
+        $input = $request->only(['submission']);
+        $input['submission'] = clean($input['submission']);
+
+        // Send Bug Report To all Devs
+        Mail::to(explode(',',env('DEV_EMAILS')))
+            ->send(new ReportABug(Auth::user(),$input['submission']));
+
         return redirect()->route('reportabug');
     }
 

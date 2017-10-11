@@ -49,7 +49,7 @@
                         <br>
 
 
-                        <button type="submit" id="submit_work" class="btn btn-success">Submit Work</button>
+                        <button type="submit" id="submit_work" class="btn btn-success">Submit Report</button>
                         &nbsp;&nbsp;&nbsp;
                         @if ($errors->any()) 
                         <span><label class="error">{{$errors->first('submission')}}</label></span> 
