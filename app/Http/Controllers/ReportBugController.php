@@ -48,7 +48,7 @@ class ReportBugController extends Controller
         Mail::to(explode(',',env('DEV_EMAILS')))
             ->send(new ReportABug(Auth::user(),$input['submission']));
 
-        return redirect()->route('reportabug');
+        return redirect()->back()->with('mail_success','message');
     }
 
     /**

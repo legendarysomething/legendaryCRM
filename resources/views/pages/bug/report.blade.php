@@ -36,6 +36,16 @@
 <section id="main-content">
     <div class="row">       
         <div class="col-md-6">
+
+			@if(session()->has('mail_success'))
+			{{-- Report Sending Success Message --}}
+        	<div class="panel panel-solid-success animated fadeInUp">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Submission Success - Thank you for your report</h3>
+                </div>
+            </div>
+			@endif
+
             <div class="panel panel-default animated fadeInUp">
                 <div class="panel-heading">
                     <h3 class="panel-title">@lang('main.reportabug')</h3>
