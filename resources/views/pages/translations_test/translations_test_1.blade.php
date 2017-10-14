@@ -36,7 +36,7 @@
                 <h3 class="panel-title">Submission Attempt</h3>
             </div>
             <div class="panel-body">
-                <form method="POST" action="">
+                <form method="POST" action="" id="test_submission_form">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">
                     <input type="hidden" name="test_num" value="1">
@@ -45,7 +45,7 @@
                     <br>
 
 
-                    <button type="submit" id="submit_work" class="btn btn-success">Submit Work</button>
+                    <span id="submit_work" class="btn btn-success">Submit Work</span>
                     &nbsp;&nbsp;&nbsp;
                     @if ($errors->any()) 
                     <span><label class="error">{{$errors->first('submission')}}</label></span> 

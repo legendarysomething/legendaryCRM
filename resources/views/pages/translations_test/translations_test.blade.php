@@ -60,10 +60,27 @@ Translations Test
 $(document).ready(function() {
     $('.textarea').wysihtml5();
 
+
+    // Manage submissions Alert Box
+    $('#submit_work').click(function(e){
+        swal({
+            title: 'Submission Confirmation',
+            text: "Make sure you double check your work, you only have one submission attempt",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#2ECBC3',
+            cancelButtonColor: '#E25E5E',
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'No',
+            buttonsStyling: true
+        }).then(function () {
+            document.getElementById('test_submission_form').submit();
+        });
+    });
+
 });
 
 </script>
-
 
 
 @endsection

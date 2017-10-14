@@ -107,9 +107,10 @@ Manage Users
             </section>
         </div>
 
+        {{-- @if(!in_array("superadministrator", $user->roles->pluck('name')->toArray())) --}}
+        {{-- @endif --}}
         <div class="col-md-7">
             <div class="panel panel-default animated fadeInUp">
-            {{-- @if(!in_array("superadministrator", $user->roles->pluck('name')->toArray())) --}}
                 <div class="panel-heading">
                     <h3 class="panel-title">User Management Section</h3>
                 </div>
@@ -121,7 +122,7 @@ Manage Users
                             
                             
                         </ul>
-                        <form action="{{route('admin.manage').'/'.$user->id}}" method="POST" >
+                        <form action="{{route('admin.manage').'/'.$user->id}}" method="POST" id="manage_role_form">
                            
                             <input type="hidden" name="_method" value="PATCH">
                             {{ csrf_field() }}
@@ -162,7 +163,7 @@ Manage Users
                             </div>
 
                         </div>
-                        <button type="submit" onsubmit="confirm('are you sure?');" class="btn btn-success">Update Roles</button>&nbsp;&nbsp;&nbsp;
+                        <span id="manage_role_button" class="btn btn-success">Update Roles</span>&nbsp;&nbsp;&nbsp;
                         @if ($errors->any())
                         @foreach($errors->all() as $error)
                             <label class="error">{{$error}}</label>
@@ -172,14 +173,7 @@ Manage Users
                     </form>
                 </div>
 
-                {{-- @else --}}
-                {{-- Superadmin Section if wanted--}}
-                {{-- <div class="panel-heading">
-                    <h3 class="panel-title">User Management Section</h3>
-                </div>
-                <div class="panel-body">
-                </div> --}}
-                {{-- @endif --}}
+                
 
             </div>
         </div>
@@ -199,9 +193,25 @@ Manage Users
 
 <script>
 $(document).ready(function() {
+    // Initilize Checkbox JS
     app.customCheckbox();
     $('input').iCheck({
         checkboxClass: 'icheckbox_flat-green',
+    });
+    // Manage role Alert Box
+    $('#manage_role_button').click(function(e){
+        swal({
+            title: 'Confirm Update?',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#2ECBC3',
+            cancelButtonColor: '#E25E5E',
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'No',
+            buttonsStyling: true
+        }).then(function () {
+            document.getElementById('manage_role_form').submit();
+        });
     });
 });
 </script>
