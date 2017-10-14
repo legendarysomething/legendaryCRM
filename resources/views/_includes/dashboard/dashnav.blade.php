@@ -24,6 +24,8 @@
     <!-- Fonts  -->
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/simple-line-icons.css')}}">
+    <!-- CSS Sweet Alerts -->
+    <link rel="stylesheet" href="{{asset('css/sweetalert2.min.css')}}">
     <!-- CSS Animate -->
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <!-- Custom styles for this theme -->
@@ -188,7 +190,7 @@
 
 
 
-<!--/sidebar right end-->
+    <!--/sidebar right end-->
     <!--Global JS-->
     <script src="{{asset('js/vendor/jquery-1.11.1.min.js')}}"></script>
     <script src="{{asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -196,7 +198,8 @@
     <script src="{{asset('plugins/pace/pace.min.js')}}"></script>
     <script src="{{asset('plugins/fullscreen/jquery.fullscreen-min.js')}}"></script>
     <script src="{{asset('js/src/app.js')}}"></script>
-
+    {{-- Sweetalert --}}
+    <script src="{{asset('js/sweetalert/sweetalert2.min.js')}}"></script>
 
 
 
