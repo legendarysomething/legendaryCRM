@@ -33,6 +33,6 @@ class ReportABug extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.bug.report');
+        return $this->subject('[MunchieSystems] Bug Report')->markdown('emails.bug.report');
     }
 }
