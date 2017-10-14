@@ -23,7 +23,7 @@ Route::prefix('admin')->middleware('role:superadministrator|administrator')->gro
 	
 	// Manage Submissions ############################################
 	Route::get('test_submissions','TestSubmissionsController@index')->name('admin.test_submissions');
-
+	Route::get('test_submissions/{id}','TestSubmissionsController@show');
 	##################################################################
 
 
@@ -32,7 +32,6 @@ Route::prefix('admin')->middleware('role:superadministrator|administrator')->gro
 	Route::get('manage/{id}','ManageUsersController@show');
 	// Change User Roles
 	Route::patch('manage/{id}','ManageUsersController@update');
-
 	##################################################################
 
 });

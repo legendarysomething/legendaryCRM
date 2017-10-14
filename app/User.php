@@ -30,5 +30,9 @@ class User extends Authenticatable
     ];
 
 
+    public function test_submissions() // $TestSubmission->user->name
+    {
+        return $this->hasMany(TestSubmission::class);
+    }
 
 }

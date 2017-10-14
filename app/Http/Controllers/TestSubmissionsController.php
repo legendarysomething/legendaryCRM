@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\TestSubmission;
+use App\User;
+
 use Illuminate\Http\Request;
 
 class TestSubmissionsController extends Controller
@@ -13,7 +16,7 @@ class TestSubmissionsController extends Controller
      */
     public function index()
     {
-        return view('pages.admin.test_submissions');
+        return view('pages.admin.submissions.test_submissions');
     }
 
     /**
@@ -45,7 +48,9 @@ class TestSubmissionsController extends Controller
      */
     public function show($id)
     {
-        //
+        $submission = TestSubmission::findorfail($id);
+
+        return view('pages.admin.submissions.test_submissions_single',compact('submission'));
     }
 
     /**

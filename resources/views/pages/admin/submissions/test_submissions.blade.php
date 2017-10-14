@@ -95,21 +95,21 @@ Manage Submissions
                                     <td>1</td>
                                     <td>Pending Grade</td>
                                     <td>1 &nbsp;&nbsp;&nbsp;<span class="label label-danger">New!</span></td>
-                                    <td><span class="btn btn-success btn-block">View</span></td>
+                                    <td><a href="{{route('admin.test_submissions').'/5'}}" class="btn btn-success btn-block" style="color: #fff;">Manage</a></td>
                                 </tr>
                                 <tr>
                                     <td>larry@gmail.com</td>
                                     <td>1</td>
                                     <td>Pending Grade</td>
                                     <td>3</td>
-                                    <td><span class="btn btn-success btn-block">View</span></td>
+                                    <td><a href="{{route('admin.test_submissions').'/5'}}" class="btn btn-success btn-block" style="color: #fff;">Manage</a></td>
                                 </tr>
                                 <tr>
                                     <td>barry@killme.com</td>
                                     <td>1</td>
                                     <td>Pending Grade</td>
                                     <td>4 &nbsp;&nbsp;&nbsp;<span class="label label-danger">New!</span></td>
-                                    <td><span class="btn btn-success btn-block">View</span></td>
+                                    <td><a href="{{route('admin.test_submissions').'/5'}}" class="btn btn-success btn-block" style="color: #fff;">Manage</a></td>
                                 </tr>
 
                                 
