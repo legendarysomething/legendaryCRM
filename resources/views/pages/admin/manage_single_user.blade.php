@@ -181,11 +181,9 @@ Manage Users
 
     </div>
 
-
-
-
-
 @endsection
+
+
 
 
 @section('footer')
