@@ -22,46 +22,100 @@ Translations Test
 
 
 <div class="pageheader">
-    <h1>Translations Test</h1>
+    <h1>Applicant Info</h1>
     <div class="breadcrumb-wrapper hidden-xs">
         <span class="label">You are here:</span>
         <ol class="breadcrumb">
-            <li class="active">Translations Test</li>
+            <li class="active">Admin</li>
+            <li class="active">Manage Applicant</li>
+            <li class="active">Applicant Info</li>
         </ol>
     </div>
 </div>
 
 
-<section id="main-content" class="max-1500">
+<section id="main-content" class="max-1500 animated fadeInUp">
     <div class="row">
     <div class="col-md-6">
-        <div class="panel panel-default animated fadeInUp">
-            <div class="panel-heading">
-                <h3 class="panel-title">Submission</h3>
-            </div>
-            <div class="panel-body">
-                {!!$submission->body!!}
-            </div>
-        </div>
-
-         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Submission Info</h3>
-            </div>
-            <div class="panel-body">
-                
-                
-
-            </div>
-        </div>
-
-
-
-    </div>
-    <div class="col-md-6 animated fadeInUp">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">Submission Management</h3>
+                <h3 class="panel-title">Submissions</h3>
+            </div>
+            <div class="panel-body">
+                @if($submissions->first())
+                    <div class="tab-wrapper tab-primary">
+                        <ul class="nav nav-tabs">
+                            @foreach($submissions as $key => $submission)
+                                @if($key == 0)
+                                    <li class="active"><a href="#{{$key}}" data-toggle="tab">Test {{$submission->test_num}}</a></li>
+                                @else
+                                    <li><a href="#{{$key}}" data-toggle="tab">Test {{$submission->test_num}}</a></li>
+                                @endif
+                            @endforeach
+                        </ul>
+                        <div class="tab-content">
+                            @foreach($submissions as $key=> $submission)
+                                @if($key == 0)
+                                    <div class="tab-pane active" id="{{$key}}">
+                                        {!!$submission->body!!}
+                                    </div>
+                                @else
+                                    <div class="tab-pane" id="{{$key}}">
+                                        {!!$submission->body!!}
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                    </div>
+                @else
+                    <h3>No submissions found for {{$user->username}}</h3>
+                @endif
+            </div>
+        </div>
+
+         
+
+    </div>
+    <div class="col-md-6">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Applicant Info</h3>
+            </div>
+            <div class="panel-body">
+                <div class="profile-info text-center">
+                    <address>
+                        <span class="pull-left"><strong>Full Name</strong></span>
+                        <span class="pull-right">{{$user->name}}</span>
+                    </address>
+                    <br><hr>
+                    <address>
+                        <span class="pull-left"><strong>Email</strong></span>
+                        <span class="pull-right">{{$user->email}}</span>
+                    <br><hr>
+                    </address>
+                    <address>
+                        <span class="pull-left"><strong>Phone Number</strong></span>
+                        <span class="pull-right">{{$user->phonenumber}}</span>
+                    <br><hr>
+                    </address>
+                    <address>
+                        <span class="pull-left"><strong>Member Since</strong></span>
+                        <span class="pull-right">{{$user->created_at->toFormattedDateString()}}</span>
+                    <br><hr>
+                    </address>
+
+                    
+                    <div class="connect">
+                        <button type="button" onclick="javascript:window.location.href='{{route('admin.manage').'/'.$user->id}}'" class="btn btn-success btn-trans"><span class="fa fa-user"></span> Manage User</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Applicant Management</h3>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -100,7 +154,7 @@ Translations Test
         <section class="panel timeline-post-to">
             <div class="panel-body">
                 <form role="form">
-                    <h3>Leave a comment</h3>
+                    <h3>Comments</h3>
                     <br>
                     <textarea class="form-control" placeholder="Add a comment"></textarea>
                     <div class="row">
