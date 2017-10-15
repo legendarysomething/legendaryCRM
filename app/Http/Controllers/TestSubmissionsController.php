@@ -48,10 +48,12 @@ class TestSubmissionsController extends Controller
      */
     public function show($id)
     {
+        
         $user = User::findorfail($id);
         $submissions = User::findorfail($id)->test_submissions()->get();
+        $status = User::findorfail($id)->test_status()->first();
 
-        return view('pages.admin.submissions.applicant_profile',compact('user','submissions'));
+        return view('pages.admin.submissions.applicant_profile',compact('user','submissions','status'));
     }
 
     /**

@@ -39,13 +39,13 @@ Manage Submissions
                     <ul class="nav nav-pills nav-stacked compose-nav">
                         <li>
                             <a href="#"> <i class="fa fa-bookmark warning-color"></i>&nbsp;&nbsp; 
-                                Test 1 Pending
+                                All Pending Applicants
                                 <span class="label label-warning label-circle pull-right inbox-notification">8</span>
                             </a>
                         </li>
                         <li>
                             <a href="#"> <i class="fa fa-bookmark primary-color"></i>&nbsp;&nbsp; 
-                                Test 2 Pending
+                                Under Consideration
                                 <span class="label label-primary label-circle pull-right inbox-notification">8</span>
                             </a>
                         </li>
@@ -75,7 +75,7 @@ Manage Submissions
             <section class="panel">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Test 1</h3>
+                        <h3 class="panel-title">Applicants</h3>
                         
                     </div>
                     <div class="panel-body table-responsive">

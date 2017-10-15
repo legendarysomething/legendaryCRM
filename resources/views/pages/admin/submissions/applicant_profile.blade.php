@@ -104,6 +104,11 @@ Translations Test
                         <span class="pull-right">{{$user->created_at->toFormattedDateString()}}</span>
                     <br><hr>
                     </address>
+                    <address>
+                        <span class="pull-left"><strong>Last Updated</strong></span>
+                        <span class="pull-right">{{$status->updated_at->toFormattedDateString()}}</span>
+                    <br><hr>
+                    </address>
 
                     
                     <div class="connect">
@@ -119,8 +124,8 @@ Translations Test
             </div>
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-sm-6">
-                        <div><h4>Single button dropdowns</h4></div>
+                    <div class="col-sm-6 align-bottom">
+                        <span><h4>Single button dropdowns</h4></span>
                     </div>
                     
                     <div class="col-sm-6 text-right">
