@@ -40,4 +40,8 @@ class User extends Authenticatable
         return $this->hasOne(TestStatus::class);
     }
 
+    public function comments() // $TestSubmission->user->name
+    {
+        return $this->hasMany(Comments::class);
+    }
 }

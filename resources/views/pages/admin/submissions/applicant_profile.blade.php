@@ -47,20 +47,20 @@ Translations Test
                         <ul class="nav nav-tabs">
                             @foreach($submissions as $key => $submission)
                                 @if($key == 0)
-                                    <li class="active"><a href="#{{$key}}" data-toggle="tab">Test {{$submission->test_num}}</a></li>
+                                    <li class="active"><a href="#tab_{{$key}}" data-toggle="tab">Test {{$submission->test_num}}</a></li>
                                 @else
-                                    <li><a href="#{{$key}}" data-toggle="tab">Test {{$submission->test_num}}</a></li>
+                                    <li><a href="#tab_{{$key}}" data-toggle="tab">Test {{$submission->test_num}}</a></li>
                                 @endif
                             @endforeach
                         </ul>
                         <div class="tab-content">
                             @foreach($submissions as $key=> $submission)
                                 @if($key == 0)
-                                    <div class="tab-pane active" id="{{$key}}">
+                                    <div class="tab-pane active" id="tab_{{$key}}">
                                         {!!$submission->body!!}
                                     </div>
                                 @else
-                                    <div class="tab-pane" id="{{$key}}">
+                                    <div class="tab-pane" id="tab_{{$key}}">
                                         {!!$submission->body!!}
                                     </div>
                                 @endif
@@ -107,6 +107,11 @@ Translations Test
                     <address>
                         <span class="pull-left"><strong>Last Updated</strong></span>
                         <span class="pull-right">{{$status->updated_at->toFormattedDateString()}}</span>
+                    <br><hr>
+                    </address>
+                    <address>
+                        <span class="pull-left"><strong>Status</strong></span>
+                        <span class="pull-right">Pending Grade</span>
                     <br><hr>
                     </address>
 

@@ -82,37 +82,23 @@ Manage Submissions
                         <table id="manage-submissions" class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>Submiter</th>
-                                    <th>Test</th>
+                                    <th>Submitter</th>
+                                    <th>Test Stage</th>
                                     <th>Test Status</th>
                                     <th>Comments</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($users as $user)
                                 <tr>
-                                    <td>sam@hotmail.com</td>
-                                    <td>1</td>
+                                    <td>{{$user->email}}</td>
+                                    <td>{{$user->test_status->test_stage}}</td>
                                     <td>Pending Grade</td>
-                                    <td>1 &nbsp;&nbsp;&nbsp;<span class="label label-danger">New!</span></td>
-                                    <td><a href="{{route('admin.test_submissions').'/1'}}" class="btn btn-success btn-block" style="color: #fff;">Manage</a></td>
+                                    <td>{{count($user->comments)}}</td>
+                                    <td><a href="{{route('admin.test_submissions').'/'. $user->id}}" class="btn btn-success btn-block" style="color: #fff;">Manage</a></td>
                                 </tr>
-                                <tr>
-                                    <td>larry@gmail.com</td>
-                                    <td>1</td>
-                                    <td>Pending Grade</td>
-                                    <td>3</td>
-                                    <td><a href="{{route('admin.test_submissions').'/1'}}" class="btn btn-success btn-block" style="color: #fff;">Manage</a></td>
-                                </tr>
-                                <tr>
-                                    <td>barry@killme.com</td>
-                                    <td>1</td>
-                                    <td>Pending Grade</td>
-                                    <td>4 &nbsp;&nbsp;&nbsp;<span class="label label-danger">New!</span></td>
-                                    <td><a href="{{route('admin.test_submissions').'/1'}}" class="btn btn-success btn-block" style="color: #fff;">Manage</a></td>
-                                </tr>
-
-                                
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

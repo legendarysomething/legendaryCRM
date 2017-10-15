@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use App\TestSubmission;
-
 use Illuminate\Http\Request;
 
-class TestSubmissionsController extends Controller
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +13,7 @@ class TestSubmissionsController extends Controller
      */
     public function index()
     {
-        $users = User::with('comments.test_status')
-            ->has('test_status')
-            ->has('test_submissions')
-            ->get();
-
-        return view('pages.admin.submissions.test_submissions',compact('users'));
+        //
     }
 
     /**
@@ -53,12 +45,7 @@ class TestSubmissionsController extends Controller
      */
     public function show($id)
     {
-
-        $user = User::findorfail($id);
-        $submissions = User::findorfail($id)->test_submissions()->get();
-        $status = User::findorfail($id)->test_status()->first();
-
-        return view('pages.admin.submissions.applicant_profile',compact('user','submissions','status'));
+        //
     }
 
     /**

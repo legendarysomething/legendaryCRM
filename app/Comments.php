@@ -12,4 +12,9 @@ class Comments extends Model
     {
     	return $this->belongsto(TestSubmission::class);
     }
+
+    public function users()
+    {
+    	return $this->belongsto(User::class);
+    }
 }
