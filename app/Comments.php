@@ -7,14 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Comments extends Model
 {
     //
+    protected $fillable = ['user_id', 'profile_id', 'resource_id', 'comment'];
 
-    public function test_submission()
+
+    public function user_owner()
     {
-    	return $this->belongsto(TestSubmission::class);
+    	return $this->belongsto(User::class,'user_id');
     }
 
-    public function users()
+    public function user_target()
     {
-    	return $this->belongsto(User::class);
+    	return $this->belongsto(User::class,'profile_id');
     }
 }

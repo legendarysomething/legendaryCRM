@@ -16,15 +16,15 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('submission_id');
+            $table->unsignedInteger('profile_id');
+            $table->unsignedInteger('resource_id'); // applicant profile = 1
             $table->text('comment');
-            $table->integer('resource');
             $table->timestamps();
 
 
             $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('submission_id')->references('id')->on('test_submissions')
+            $table->foreign('profile_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
         });
     }

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\TestSubmission;
+use App\Comments;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class TestSubmissionsController extends Controller
 {
@@ -16,7 +18,8 @@ class TestSubmissionsController extends Controller
      */
     public function index()
     {
-        $users = User::with('comments.test_status')
+        $users = User::with('comments')
+            ->with('test_status')
             ->has('test_status')
             ->has('test_submissions')
             ->get();
@@ -40,9 +43,24 @@ class TestSubmissionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request, $id)
+    {   
+
+        $this->validate(request(),['comment' => 'required|max:255']);
+
+        $input = $request->only(['comment']);
+        $input['comment'] = strip_tags($input['comment']);
+
+        // Store comment into the database
+        Comments::create([
+            'user_id'    => auth()->id(),
+            'profile_id' => $id,
+            'resource_id' => '1',
+            'comment'   => $input['comment'],
+        ]);
+
+        return Redirect::back();
+
     }
 
     /**
@@ -54,11 +72,13 @@ class TestSubmissionsController extends Controller
     public function show($id)
     {
 
-        $user = User::findorfail($id);
+        $user = User::with('comments.user_owner')->where('id',$id)->firstorfail();
         $submissions = User::findorfail($id)->test_submissions()->get();
         $status = User::findorfail($id)->test_status()->first();
+        
+        return view('pages.admin.submissions.applicant_profile',
+            compact('user','submissions','status'));
 
-        return view('pages.admin.submissions.applicant_profile',compact('user','submissions','status'));
     }
 
     /**

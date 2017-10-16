@@ -42,6 +42,6 @@ class User extends Authenticatable
 
     public function comments() // $TestSubmission->user->name
     {
-        return $this->hasMany(Comments::class);
+        return $this->hasMany(Comments::class,'profile_id')->orderBy('created_at','desc');
     }
 }

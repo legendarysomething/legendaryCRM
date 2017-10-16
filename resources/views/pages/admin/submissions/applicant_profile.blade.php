@@ -3,7 +3,7 @@
 
 {{-- Page Header --}}
 @section('pageheader')
-Translations Test
+Applicant Info
 @endsection
 {{-- End Page Header --}}
 
@@ -36,7 +36,7 @@ Translations Test
 
 <section id="main-content" class="max-1500 animated fadeInUp">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-lg-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Submissions</h3>
@@ -74,51 +74,10 @@ Translations Test
                 </div>
             </div>
 
-            <section class="panel timeline-post-to">
-                <div class="panel-body">
-                    <form role="form">
-                        <h3>Comments</h3>
-                        <br>
-                        <textarea class="form-control" placeholder="Add a comment"></textarea>
-                        <div class="row">
-                            <div class="col-sm-12 text-right">
-                                <span class="btn btn-success">Post</span>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </section>
-
-            <section class="panel timeline-post">
-                <div class="panel-body">
-                    <ul>
-                        <li>
-                            <div class="date">
-                                <span>23</span>
-                                <span class="small">Feb</span>
-                            </div>
-                            <h4>Lorem ipsum dolor sit</h4>
-                            <p>
-                                Tortor metus suscipit lectus lacinia mi. Duis quis ullamcorper, felis consequat ut felis sit, pellentesque sit nunc, porttitor a, neque enim metus sed dictum scelerisque. Ante ornare, ante nunc ac, et feugiat justo urna, pharetra velit convallis, sit magna odio in nunc sit.
-                            </p>
-                        </li>
-                        <li>
-                            <div class="date">
-                                <span>12</span>
-                                <span class="small">Jan</span>
-                            </div>
-                            <h4>Lorem ipsum dolor!</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                            </p>
-
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            
 
         </div>
-         <div class="col-md-6">
+        <div class="col-lg-6">
             {{--<div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Applicant Management</h3>
@@ -206,6 +165,44 @@ Translations Test
                     </div>
                 </div>
             </div>
+
+
+            <section class="panel timeline-post-to">
+                <div class="panel-body">
+                    <form method="POST" action="" id="test_submission_form">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="_method" value="PUT">
+
+                        <h3>Comments</h3>
+                        <br>
+                        <textarea class="form-control" name="comment" placeholder="Add a comment" style="{{$errors->has('submission') ? 'border-color: #e25d5d;' : ''}}"></textarea>
+                        <div class="row">
+                            <div class="col-sm-12 text-right">
+                                <button type="submit" class="btn btn-success">Post</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="panel timeline-post">
+                <div class="panel-body">
+                    <ul>
+                        @foreach($user->comments as $comment)
+                        <li>
+                            <div class="date">
+                                <img class="img-circle profile-image" src="{{asset('img/profile.jpg')}}" alt="profile">
+                            </div>
+                            <h4>{{$comment->user_owner->username}} - <small>{{$comment->created_at->toDayDateTimeString()}}</small></h4><br>
+                            <p>
+                                {{$comment->comment}}
+                            </p>
+                        </li>
+                        @endforeach
+
+                    </ul>
+                </div>
+            </section>
 
         </div>
     </div>

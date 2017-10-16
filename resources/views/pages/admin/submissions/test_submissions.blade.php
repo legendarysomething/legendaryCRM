@@ -31,7 +31,7 @@ Manage Submissions
 <section id="main-content" class="animated fadeInUp">
     <!--mail wrapper start-->
     <div class="row">
-        <div class="col-md-3 col-sm-12" id="compose-wrapper">
+        <div class="col-lg-3 col-sm-12" id="compose-wrapper">
             <div class="panel">
                 <aside class="panel-body">
                     {{-- <button class="btn btn-default btn-block">Manage Labels</button> --}}
@@ -40,25 +40,21 @@ Manage Submissions
                         <li>
                             <a href="#"> <i class="fa fa-bookmark warning-color"></i>&nbsp;&nbsp; 
                                 All Pending Applicants
-                                <span class="label label-warning label-circle pull-right inbox-notification">8</span>
                             </a>
                         </li>
                         <li>
                             <a href="#"> <i class="fa fa-bookmark primary-color"></i>&nbsp;&nbsp; 
                                 Under Consideration
-                                <span class="label label-primary label-circle pull-right inbox-notification">8</span>
                             </a>
                         </li>
                         <li>
                             <a href="#"> <i class="fa fa-bookmark success-color"></i>&nbsp;&nbsp; 
                                 Passed
-                                <span class="label label-success label-circle pull-right inbox-notification">2</span>
                             </a>
                         </li>
                         <li>
                             <a href="#"> <i class="fa fa-bookmark danger-color"></i>&nbsp;&nbsp; 
                                 Failed
-                                <span class="label label-danger label-circle pull-right inbox-notification">3</span>
                             </a>
                         </li>
                         
@@ -70,7 +66,7 @@ Manage Submissions
 
             
         </div>
-        <div class="col-md-9 col-sm-12" id="inbox-wrapper">
+        <div class="col-lg-9 col-sm-12" id="inbox-wrapper">
 
             <section class="panel">
                 <div class="panel panel-default">
