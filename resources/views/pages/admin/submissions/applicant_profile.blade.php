@@ -187,6 +187,7 @@ Applicant Info
 
             <section class="panel timeline-post">
                 <div class="panel-body">
+                    @if($user->comments->first())
                     <ul>
                         @foreach($user->comments as $comment)
                         <li>
@@ -202,8 +203,10 @@ Applicant Info
                             
                         </li>
                         @endforeach
-
                     </ul>
+                    @else
+                    <h4>No Comments Yet</h4>
+                    @endif
                 </div>
             </section>
 
