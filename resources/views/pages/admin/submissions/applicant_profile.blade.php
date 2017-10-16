@@ -191,12 +191,15 @@ Applicant Info
                         @foreach($user->comments as $comment)
                         <li>
                             <div class="date">
-                                <img class="img-circle profile-image" src="{{asset('img/profile.jpg')}}" alt="profile">
+                                <img class="img-circle profile-image animated bounceIn" src="{{asset('img/profile.jpg')}}" alt="profile">
                             </div>
-                            <h4>{{$comment->user_owner->username}} - <small>{{$comment->created_at->toDayDateTimeString()}}</small></h4><br>
-                            <p>
-                                {{$comment->comment}}
-                            </p>
+                            <h4>
+                                {{$comment->user_owner->username}} - <small>{{$comment->created_at->toDayDateTimeString()}}</small>
+                            </h4>
+                            <br>
+
+                            <p>{{$comment->comment}}</p>
+                            
                         </li>
                         @endforeach
 
