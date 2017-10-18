@@ -171,7 +171,7 @@ Applicant Info
                 </div>
             </div>
 
-
+            {{-- Comments Section --}}
             <section class="panel timeline-post-to">
                 <div class="panel-body">
                     <form method="POST" action="/admin/test_submissions/{{$user->id}}/comment" id="comments_form">
@@ -200,6 +200,7 @@ Applicant Info
                             </div>
                             <h4>
                                 {{$comment->user_owner->username}} - <small>{{$comment->created_at->toDayDateTimeString()}}</small>
+                                {{-- <span class="pull-right"><i class="fa fa-fw fa-times" style="color: grey; cursor: pointer;"></i></span> --}}
                             </h4>
                             <br>
 

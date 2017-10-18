@@ -37,7 +37,7 @@ Manage Users
                 <div class="panel-body profile-wrapper">
                     <div class="col-md-12">
                         <div class="profile-pic text-center">
-                            <img src="{{asset('img/profile.jpg')}}" alt="" class="img-circle" style="max-width: 200px;">
+                            <img src="{{$user->gravatar}}" onerror="this.onerror=null;this.src='{{asset('img/profile.jpg')}}'" alt="" class="img-circle" style="width: 200px;">
                         </div>
                         <br>
                         <div class="profile-info text-center">
