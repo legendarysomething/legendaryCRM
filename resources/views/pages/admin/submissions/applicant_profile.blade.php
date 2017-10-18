@@ -154,6 +154,11 @@ Applicant Info
                                     <span class="fa fa-pencil"></span>&nbsp;&nbsp;
                                     Update Applicant Status
                                 </div>
+
+                                <div class="text-center btn btn-danger" id="reset_applicant_status">
+                                    <span class="fa fa-undo"></span>&nbsp;&nbsp;
+                                    Reset Applicant Test
+                                </div>
                             </div>
 
                         </form>
@@ -242,6 +247,23 @@ $(document).ready(function() {
         swal({
             title: 'Status Change Confirmation',
             text: 'Are you sure you want to change the status of this applicant?',
+            type: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#2ECBC3',
+            cancelButtonColor: '#E25E5E',
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'No',
+            buttonsStyling: true
+        }).then(function () {
+            // document.getElementById('test_submission_form').submit();
+        });
+    });
+
+
+     $('#reset_applicant_status').click(function(e){
+        swal({
+            title: 'Reset Applicant Test',
+            text: 'Are you sure you want to reset this applicants status? All current submissions will be removed',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#2ECBC3',
