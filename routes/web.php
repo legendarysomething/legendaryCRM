@@ -25,7 +25,7 @@ Route::prefix('admin')->middleware('role:superadministrator|administrator')->gro
 	Route::get('test_submissions','TestSubmissionsController@index')->name('admin.test_submissions');
 	Route::get('test_submissions/{id}','TestSubmissionsController@show');
 
-	Route::put('test_submissions/{id}','TestSubmissionsController@store');
+	Route::post('test_submissions/{id}/comment','CommentsController@store');
 	##################################################################
 
 
