@@ -92,7 +92,7 @@
         <aside class="sidebar sidebar-left">
             <div class="sidebar-profile">
                 <div class="avatar">
-                    <img class="img-circle profile-image" src="{{asset('img/profile.jpg')}}" alt="profile">
+                    <img class="img-circle profile-image" src="{{Auth::user()->gravatar}}" onerror="this.onerror=null;this.src='{{asset('img/profile.jpg')}}'">
                     <i class="on border-dark animated bounceIn"></i>
                 </div>
                 <div class="profile-body dropdown">
